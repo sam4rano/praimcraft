@@ -1,0 +1,113 @@
+// Design tokens for Praimcraft agency website
+export const designTokens = {
+  colors: {
+    primary: {
+      50: "#eff6ff",
+      100: "#dbeafe", 
+      200: "#bfdbfe",
+      300: "#93c5fd",
+      400: "#60a5fa",
+      500: "#0066ff", // Main brand blue
+      600: "#0052cc",
+      700: "#003d99",
+      800: "#002966",
+      900: "#001433",
+    },
+    accent: {
+      50: "#f0f9ff",
+      100: "#e0f2fe",
+      200: "#bae6fd",
+      300: "#7dd3fc",
+      400: "#38bdf8",
+      500: "#0ea5e9",
+      600: "#0284c7",
+      700: "#0369a1",
+      800: "#075985",
+      900: "#0c4a6e",
+    },
+    neutral: {
+      50: "#fafafa",
+      100: "#f5f5f5",
+      200: "#e5e5e5",
+      300: "#d4d4d4",
+      400: "#a3a3a3",
+      500: "#737373",
+      600: "#525252",
+      700: "#404040",
+      800: "#262626",
+      900: "#171717",
+    },
+  },
+  typography: {
+    fontFamily: {
+      sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+      heading: ["Inter", "system-ui", "sans-serif"],
+      mono: ["var(--font-geist-mono)", "monospace"],
+    },
+    fontSize: {
+      xs: "0.75rem",
+      sm: "0.875rem",
+      base: "1rem",
+      lg: "1.125rem",
+      xl: "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "3.75rem",
+      "7xl": "4.5rem",
+      "8xl": "6rem",
+      "9xl": "8rem",
+    },
+    lineHeight: {
+      tight: "1.25",
+      normal: "1.5",
+      relaxed: "1.75",
+    },
+  },
+  spacing: {
+    xs: "0.25rem",
+    sm: "0.5rem",
+    md: "1rem",
+    lg: "1.5rem",
+    xl: "2rem",
+    "2xl": "3rem",
+    "3xl": "4rem",
+    "4xl": "6rem",
+    "5xl": "8rem",
+  },
+  borderRadius: {
+    sm: "0.25rem",
+    md: "0.5rem",
+    lg: "0.75rem",
+    xl: "1rem",
+    "2xl": "1.5rem",
+    full: "9999px",
+  },
+  shadows: {
+    soft: "0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)",
+    medium: "0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    strong: "0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 2px 10px -2px rgba(0, 0, 0, 0.05)",
+  },
+  breakpoints: {
+    sm: "640px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+    "2xl": "1536px",
+  },
+  animations: {
+    duration: {
+      fast: "150ms",
+      normal: "300ms",
+      slow: "500ms",
+    },
+    easing: {
+      easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
+      easeOut: "cubic-bezier(0, 0, 0.2, 1)",
+      easeIn: "cubic-bezier(0.4, 0, 1, 1)",
+    },
+  },
+} as const;
+
+export type DesignTokens = typeof designTokens;

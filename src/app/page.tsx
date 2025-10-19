@@ -1,101 +1,319 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import { Card, CardContent } from "@/components/ui/Card";
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { Badge } from "@/components/ui/Badge";
+import { FadeIn } from "@/components/animations/FadeIn";
+import { StaggerContainer } from "@/components/animations/StaggerContainer";
+import { StaggerItem } from "@/components/animations/StaggerItem";
+import { ParallaxScroll } from "@/components/animations/ParallaxScroll";
+import { MagneticHover } from "@/components/animations/MagneticHover";
+import { RevealOnScroll } from "@/components/animations/RevealOnScroll";
+import { AbstractBackground, GeometricCard, FloatingOrb } from "@/components/visual/AbstractBackground";
+import { GlowEffect } from "@/components/visual/GlowEffect";
+import { getAllServices, getFeaturedCaseStudies, getFeaturedBlogPosts } from "@/lib/sanity/fetch";
+import { generateMetadata as generateSEOMetadata, pageMetadata } from "@/lib/seo/metadata";
 
-export default function Home() {
+export const metadata = generateSEOMetadata(pageMetadata.home);
+
+interface BlogPost {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  excerpt?: string;
+  author?: {
+    name: string;
+    image?: any;
+    role?: string;
+  };
+  categories?: Array<{
+    title: string;
+    slug: { current: string };
+    color?: string;
+  }>;
+  publishedAt: string;
+  readingTime?: number;
+}
+
+export default async function Home() {
+  // Fetch real data from Sanity with fallbacks
+  const [services, caseStudies, blogPosts] = await Promise.all([
+    getAllServices().catch(() => []),
+    getFeaturedCaseStudies().catch(() => []),
+    getFeaturedBlogPosts().catch(() => []),
+  ]);
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <AbstractBackground variant="hero" intensity="medium" className="min-h-screen">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[70vh] lg:min-h-[80vh] py-12 lg:py-24">
+            <RevealOnScroll direction="left" delay={0.2}>
+              <div className="space-y-6 lg:space-y-8 text-white">
+                <div className="space-y-4 lg:space-y-6">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1]">
+                    Digital Solutions That
+                    <span className="gradient-text block">Drive Results</span>
+                  </h1>
+                  <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-lg">
+                        We&apos;re a multi-service digital agency specializing in software development,
+                    social media management, analytics, automation, and AI integration.
+                  </p>
+                </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <MagneticHover>
+                    <GlowEffect intensity="medium" color="accent">
+                      <Link href="/contact">
+                        <Button size="lg" className="group bg-accent-500 hover:bg-accent-600 text-white border-0">
+                          <span className="group-hover:translate-x-1 transition-transform duration-200">
+                            Get Started Today
+                          </span>
+                        </Button>
+                      </Link>
+                    </GlowEffect>
+                  </MagneticHover>
+                  <MagneticHover>
+                    <Link href="/case-studies">
+                      <Button variant="outline" size="lg" className="group border-white text-white hover:bg-white hover:text-primary-900">
+                        <span className="group-hover:translate-x-1 transition-transform duration-200">
+                          View Our Work
+                        </span>
+                      </Button>
+                    </Link>
+                  </MagneticHover>
+                </div>
+
+                <RevealOnScroll direction="up" delay={0.6}>
+                  <div className="flex items-center space-x-12 pt-8">
+                    <div className="text-center group">
+                      <div className="text-3xl font-bold text-accent-400 group-hover:scale-110 transition-transform duration-200">50+</div>
+                      <div className="text-sm text-neutral-300">Projects Completed</div>
+                    </div>
+                    <div className="text-center group">
+                      <div className="text-3xl font-bold text-accent-400 group-hover:scale-110 transition-transform duration-200">98%</div>
+                      <div className="text-sm text-neutral-300">Client Satisfaction</div>
+                    </div>
+                    <div className="text-center group">
+                      <div className="text-3xl font-bold text-accent-400 group-hover:scale-110 transition-transform duration-200">24/7</div>
+                      <div className="text-sm text-neutral-300">Support Available</div>
+                    </div>
+                  </div>
+                </RevealOnScroll>
+              </div>
+            </RevealOnScroll>
+
+            <RevealOnScroll direction="right" delay={0.4}>
+              <div className="relative">
+                <ParallaxScroll offset={30}>
+                  <MagneticHover strength={0.1}>
+                    <GeometricCard glow={true} className="h-96 lg:h-[600px] flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <div className="text-8xl mb-6 animate-bounce-gentle">🚀</div>
+                        <div className="text-2xl font-semibold mb-2">Hero Image Placeholder</div>
+                        <div className="text-sm opacity-80">Modern workspace image</div>
+                      </div>
+                      <FloatingOrb size="md" color="accent" position="top-right" />
+                      <FloatingOrb size="sm" color="primary" position="bottom-left" />
+                    </GeometricCard>
+                  </MagneticHover>
+                </ParallaxScroll>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </Container>
+      </AbstractBackground>
+
+      {/* Services Section */}
+      <Section padding="lg" background="gray">
+        <Container>
+          <RevealOnScroll direction="up" delay={0.2}>
+            <div className="text-center mb-20">
+              <h2 className="text-5xl font-bold text-neutral-900 mb-6">
+                Our Services
+              </h2>
+              <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                We offer comprehensive digital solutions to help your business thrive in the modern world.
+              </p>
+            </div>
+          </RevealOnScroll>
+
+              <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {services.map((service: any, index: number) => (
+                  <StaggerItem key={service._id}>
+                    <MagneticHover strength={0.2}>
+                      <GlowEffect intensity="soft" color="primary">
+                        <GeometricCard className="text-center group relative overflow-hidden h-full">
+                          <div className="relative z-10">
+                            <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                              {service.icon || "💻"}
+                            </div>
+                            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-accent-400 transition-colors duration-300">
+                              {service.title}
+                            </h3>
+                            <p className="text-neutral-300 mb-8 leading-relaxed">
+                              {service.shortDescription}
+                            </p>
+                            <Link href={`/services/${service.slug.current}`}>
+                              <Button 
+                                variant="outline" 
+                                size="sm" 
+                                className="group-hover:bg-accent-500 group-hover:text-white group-hover:border-accent-500 transition-all duration-300 border-white text-white hover:bg-white hover:text-primary-900"
+                              >
+                                Learn More
+                              </Button>
+                            </Link>
+                          </div>
+                          <FloatingOrb size="sm" color="accent" position="top-right" />
+                        </GeometricCard>
+                      </GlowEffect>
+                    </MagneticHover>
+                  </StaggerItem>
+                ))}
+          </StaggerContainer>
+        </Container>
+      </Section>
+
+      {/* Case Studies Section */}
+      <Section padding="lg" background="gray">
+        <Container>
+          <FadeIn direction="up" delay={0.2}>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-neutral-900 mb-4">
+                Success Stories
+              </h2>
+              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+                    See how we&apos;ve helped businesses achieve their digital goals.
+              </p>
+            </div>
+          </FadeIn>
+
+              <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {caseStudies.map((study: any, index: number) => (
+                  <StaggerItem key={study._id}>
+                    <Card className="group hover:-translate-y-1 transform transition-all duration-300">
+                        <div className="relative h-48 bg-gradient-to-br from-primary-100 to-accent-100 rounded-t-xl flex items-center justify-center">
+                          <div className="text-center text-primary-600">
+                            <div className="text-4xl mb-2">📈</div>
+                            <div className="text-sm font-medium">Case Study Image</div>
+                          </div>
+                        </div>
+                        <CardContent className="p-6">
+                          <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                            {study.title}
+                          </h3>
+                          <p className="text-neutral-600 mb-4">
+                            Client: {study.client}
+                          </p>
+                          <Badge variant="success" size="sm">
+                            View Results
+                          </Badge>
+                        </CardContent>
+                      </Card>
+                  </StaggerItem>
+                ))}
+          </StaggerContainer>
+
+          <FadeIn direction="up" delay={0.4}>
+            <div className="text-center mt-12">
+              <Link href="/case-studies">
+                <Button size="lg">
+                  View All Case Studies
+                </Button>
+              </Link>
+            </div>
+          </FadeIn>
+        </Container>
+      </Section>
+
+      {/* Blog Section */}
+      <Section padding="lg">
+        <Container>
+          <FadeIn direction="up" delay={0.2}>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-neutral-900 mb-4">
+                Latest Insights
+              </h2>
+              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+                Stay updated with the latest trends and insights in digital marketing and technology.
+              </p>
+            </div>
+          </FadeIn>
+
+              <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {blogPosts.map((post: BlogPost, index: number) => (
+                  <StaggerItem key={post._id}>
+                    <Link href={`/blog/${post.slug.current}`}>
+                      <Card className="h-full group hover:-translate-y-1 transform transition-all duration-300">
+                        <CardContent className="p-6">
+                          <div className="space-y-4">
+                            {post.categories && post.categories.length > 0 && (
+                              <Badge variant="secondary" size="sm">
+                                {post.categories[0].title}
+                              </Badge>
+                            )}
+                            <h3 className="text-xl font-bold text-neutral-900 line-clamp-2 group-hover:text-primary-600 transition-colors duration-200">
+                              {post.title}
+                            </h3>
+                            <p className="text-neutral-600 line-clamp-3">
+                              {typeof post.excerpt === 'string' ? post.excerpt : 'Preview content available'}
+                            </p>
+                            <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
+                              <span className="text-sm text-neutral-500">
+                                By {post.author?.name || "Unknown Author"}
+                              </span>
+                              <span className="text-sm text-neutral-500">
+                                {new Date(post.publishedAt).toLocaleDateString()}
+                              </span>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  </StaggerItem>
+                ))}
+          </StaggerContainer>
+
+          <FadeIn direction="up" delay={0.4}>
+            <div className="text-center mt-12">
+              <Link href="/blog">
+                <Button size="lg">
+                  Read Our Blog
+                </Button>
+              </Link>
+            </div>
+          </FadeIn>
+        </Container>
+      </Section>
+
+      {/* CTA Section */}
+      <Section padding="lg" background="gradient">
+        <Container>
+          <FadeIn direction="up" delay={0.2}>
+            <div className="text-center max-w-4xl mx-auto">
+              <h2 className="text-4xl font-bold text-neutral-900 mb-6">
+                Ready to Transform Your Digital Presence?
+              </h2>
+              <p className="text-xl text-neutral-600 mb-8">
+                    Let&apos;s work together to create digital solutions that drive real results for your business.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact">
+                  <Button size="lg">
+                    Start Your Project
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="outline" size="lg">
+                    Schedule Consultation
+                  </Button>
+                </Link>
+              </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          </FadeIn>
+        </Container>
+      </Section>
     </div>
   );
 }
