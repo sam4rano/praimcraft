@@ -32,9 +32,9 @@ interface BlogPost {
 }
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -51,14 +51,14 @@ export async function generateMetadata({ params }: PageProps) {
   return generateSEOMetadata({
     title: post.title,
     description: typeof post.excerpt === 'string' ? post.excerpt : 'Read this blog post on Praimcraft',
-    keywords: post.categories?.map(cat => cat.title) || [],
+    keywords: post.categories?.map((cat: { title: any; }) => cat.title) || [],
     image: post.featuredImage?.asset?.url,
     url: `/blog/${post.slug.current}`,
     type: 'article',
     publishedTime: post.publishedAt,
     authors: post.author?.name ? [post.author.name] : ['Praimcraft Team'],
     section: post.categories?.[0]?.title,
-    tags: post.categories?.map(cat => cat.title) || [],
+    tags: post.categories?.map((cat: { title: any; }) => cat.title) || [],
   });
 }
 
