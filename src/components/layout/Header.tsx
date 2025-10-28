@@ -34,7 +34,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-neutral-600 hover:text-primary-600 transition-colors duration-200 font-medium focus-visible"
+                className="text-neutral-600 hover:text-primary-600 transition-colors duration-200 font-medium"
                 aria-label={`Navigate to ${item.name}`}
               >
                 {item.name}

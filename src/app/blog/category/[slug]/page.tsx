@@ -177,8 +177,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 We haven't published any articles in this category yet.
               </p>
               <Link href="/blog">
-                <Button>
-                  View All Articles
+                <Button size="lg">
+                  View All Articles →
                 </Button>
               </Link>
             </div>

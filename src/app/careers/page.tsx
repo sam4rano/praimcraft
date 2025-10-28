@@ -114,10 +114,10 @@ export default function CareersPage() {
                 We're looking for passionate individuals who want to make a real impact.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg">
-                  View Open Positions
+                <Button size="lg" className="w-full sm:w-auto">
+                  View Open Positions →
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
                   Learn About Our Culture
                 </Button>
               </div>
@@ -200,7 +200,7 @@ export default function CareersPage() {
                         </div>
                         <div className="mt-4 lg:mt-0 lg:ml-8">
                           <Button size="lg">
-                            Apply Now
+                            Apply Now →
                           </Button>
                         </div>
                       </div>
@@ -255,8 +255,8 @@ export default function CareersPage() {
               <p className="text-lg sm:text-xl text-white/90 mb-10 leading-relaxed">
                 We're always looking for talented individuals. Send us your resume and let us know how you can contribute to our team.
               </p>
-              <Button size="lg">
-                Send Your Resume
+              <Button size="lg" className="w-full sm:w-auto">
+                Send Your Resume →
               </Button>
             </div>
           </RevealOnScroll>

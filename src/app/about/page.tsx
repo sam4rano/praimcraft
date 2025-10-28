@@ -336,12 +336,12 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button size="lg">
-                  Start Your Project
+                <Button size="lg" className="w-full sm:w-auto">
+                  Start Your Project →
                 </Button>
               </Link>
               <Link href="/case-studies">
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
                   View Our Work
                 </Button>
               </Link>

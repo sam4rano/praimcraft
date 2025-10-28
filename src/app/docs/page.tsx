@@ -76,10 +76,10 @@ export default function DocsPage() {
                 From quick start guides to advanced integrations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg">
-                  Get Started
+                <Button size="lg" className="w-full sm:w-auto">
+                  Get Started →
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
                   Browse API Reference
                 </Button>
               </div>
@@ -112,7 +112,7 @@ export default function DocsPage() {
                         {link.description}
                       </p>
                       <Button variant="outline" size="sm" className="w-full">
-                        Visit
+                        Visit →
                       </Button>
                     </CardContent>
                   </Card>
@@ -170,7 +170,7 @@ export default function DocsPage() {
                               {article.description}
                             </p>
                             <Button variant="outline" size="sm" className="w-full">
-                              Read More
+                              Read More →
                             </Button>
                           </CardContent>
                         </Card>
@@ -202,7 +202,7 @@ export default function DocsPage() {
                   className="flex-1 px-4 py-3 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
                 <Button size="lg">
-                  Search
+                  Search →
                 </Button>
               </div>
             </div>

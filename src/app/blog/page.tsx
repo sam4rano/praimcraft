@@ -124,7 +124,7 @@ export default async function BlogPage() {
           {/* Load More Button */}
           {posts.length > 0 && (
             <div className="text-center mt-12">
-              <Button size="lg">
+              <Button size="lg" variant="outline">
                 Load More Posts
               </Button>
             </div>
@@ -150,7 +150,7 @@ export default async function BlogPage() {
                 readOnly
               />
               <Button size="lg" disabled>
-                Subscribe
+                Subscribe →
               </Button>
             </div>
             <p className="text-sm text-neutral-500 mt-2">

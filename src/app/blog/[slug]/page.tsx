@@ -312,7 +312,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </h2>
             <Link href="/blog">
               <Button size="lg">
-                View All Posts
+                View All Posts →
               </Button>
             </Link>
           </div>

@@ -59,8 +59,8 @@ export default async function ServicesPage() {
                       <p className="text-neutral-600 mb-6 flex-grow">
                         {service.shortDescription}
                       </p>
-                      <Button variant="outline" className="group-hover:bg-primary-600 group-hover:text-white group-hover:border-primary-600 transition-all duration-300">
-                        Learn More
+                      <Button variant="outline" size="sm" className="group-hover:bg-primary-600 group-hover:text-white group-hover:border-primary-600">
+                        Learn More →
                       </Button>
                     </CardContent>
                   </Card>
@@ -84,7 +84,7 @@ export default async function ServicesPage() {
               </p>
               <Link href="/contact">
                 <Button size="lg">
-                  Get a Free Consultation
+                  Get a Free Consultation →
                 </Button>
               </Link>
             </div>

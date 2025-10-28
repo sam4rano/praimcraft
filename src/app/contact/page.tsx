@@ -144,8 +144,8 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
 
-                <Button size="lg" className="w-full">
-                  Send Message
+                <Button type="submit" size="lg" className="w-full">
+                  Send Message →
                 </Button>
               </form>
             </div>
@@ -246,8 +246,8 @@ export default function ContactPage() {
                         <p className="text-neutral-600 mb-2">
                           Chat with us in real-time for quick questions.
                         </p>
-                        <Button variant="outline" size="sm" onClick={() => alert('Live chat coming soon!')}>
-                          Start Chat
+                        <Button variant="outline" size="md" onClick={() => alert('Live chat coming soon!')}>
+                          Start Chat →
                         </Button>
                       </div>
                     </div>
@@ -379,10 +379,10 @@ export default function ContactPage() {
               Don&apos;t wait! Contact us today and let&apos;s discuss how we can help your business grow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}>
-                Start Your Project
+              <Button size="lg" className="w-full sm:w-auto" onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}>
+                Start Your Project →
               </Button>
-              <Button variant="outline" size="lg" onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto" onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}>
                 Schedule a Call
               </Button>
             </div>

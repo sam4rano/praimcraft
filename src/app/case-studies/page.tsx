@@ -292,8 +292,8 @@ export default function CaseStudiesPage() {
                     
                     <div className="pt-4">
                       <Link href={`/case-studies/${study.id}`}>
-                        <Button className="w-full">
-                          View Full Case Study
+                        <Button size="sm" className="w-full">
+                          View Full Case Study →
                         </Button>
                       </Link>
                     </div>
@@ -359,7 +359,7 @@ export default function CaseStudiesPage() {
                       </div>
                       <Link href={`/case-studies/${study.id}`}>
                         <Button variant="outline" size="sm">
-                          View Details
+                          View Details →
                         </Button>
                       </Link>
                     </div>
@@ -384,10 +384,10 @@ export default function CaseStudiesPage() {
               Let's work together to achieve similar results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
-                Start Your Project
+              <Button size="lg" className="w-full sm:w-auto">
+                Start Your Project →
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto">
                 View Our Services
               </Button>
             </div>

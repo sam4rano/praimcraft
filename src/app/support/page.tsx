@@ -113,10 +113,10 @@ export default function SupportPage() {
                 From quick answers to detailed assistance, we've got you covered.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg">
-                  Contact Support
+                <Button size="lg" className="w-full sm:w-auto">
+                  Contact Support →
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
                   Browse FAQ
                 </Button>
               </div>
@@ -161,7 +161,7 @@ export default function SupportPage() {
                         </Badge>
                       </div>
                       <Button variant="outline" size="sm" className="w-full">
-                        Contact Now
+                        Contact Now →
                       </Button>
                     </CardContent>
                   </Card>
@@ -240,7 +240,7 @@ export default function SupportPage() {
                         {resource.description}
                       </p>
                       <Button variant="outline" size="sm" className="w-full">
-                        Explore
+                        Explore →
                       </Button>
                     </CardContent>
                   </Card>
@@ -264,10 +264,10 @@ export default function SupportPage() {
                 Don't hesitate to reach out - we're here to help!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg">
-                  Contact Support
+                <Button size="lg" className="w-full sm:w-auto">
+                  Contact Support →
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
                   Schedule a Call
                 </Button>
               </div>

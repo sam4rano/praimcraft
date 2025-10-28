@@ -56,10 +56,8 @@ export default async function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <AbstractBackground variant="hero" intensity="medium" className="min-h-screen">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center min-h-[70vh] lg:min-h-[80vh] py-16 sm:py-20 lg:py-24">
             <RevealOnScroll direction="left" delay={0.2}>
-              <div className="space-y-8 sm:space-y-10 lg:space-y-12 text-white px-2 sm:px-0">
+              <div className="space-y-4 sm:space-y-4 lg:space-y-4 pt-18  text-white px-4 sm:px-2">
                 <div className="space-y-5 sm:space-y-6 lg:space-y-8">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.15] sm:leading-[1.1]">
                     Digital Solutions That
@@ -72,26 +70,16 @@ export default async function Home() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 w-full sm:w-auto">
-                  <MagneticHover>
-                    <GlowEffect intensity="medium" color="accent">
-                      <Link href="/contact">
-                        <Button size="lg" className="group bg-accent-500 hover:bg-accent-600 text-white border-0">
-                          <span className="group-hover:translate-x-1 transition-transform duration-200">
-                            Get Started Today
-                          </span>
-                        </Button>
-                      </Link>
-                    </GlowEffect>
-                  </MagneticHover>
-                  <MagneticHover>
-                    <Link href="/case-studies">
-                      <Button variant="outline" size="lg" className="group border-white text-white hover:bg-white hover:text-primary-900">
-                        <span className="group-hover:translate-x-1 transition-transform duration-200">
-                          View Our Work
-                        </span>
-                      </Button>
-                    </Link>
-                  </MagneticHover>
+                  <Link href="/contact">
+                    <Button size="lg" className="w-full sm:w-auto">
+                      Get Started Today →
+                    </Button>
+                  </Link>
+                  <Link href="/case-studies">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary-900">
+                      View Our Work
+                    </Button>
+                  </Link>
                 </div>
 
                 <RevealOnScroll direction="up" delay={0.6}>
@@ -113,25 +101,6 @@ export default async function Home() {
               </div>
             </RevealOnScroll>
 
-            <RevealOnScroll direction="right" delay={0.4}>
-              <div className="relative mt-10 lg:mt-0">
-                <ParallaxScroll offset={30}>
-                  <MagneticHover strength={0.1}>
-                    <GeometricCard glow={true} className="h-80 sm:h-96 lg:h-[600px] flex items-center justify-center">
-                      <div className="text-center text-white px-4">
-                        <div className="text-6xl sm:text-7xl lg:text-8xl mb-4 sm:mb-6 animate-bounce-gentle">🚀</div>
-                        <div className="text-xl sm:text-2xl font-semibold mb-2">Hero Image Placeholder</div>
-                        <div className="text-xs sm:text-sm opacity-80">Modern workspace image</div>
-                      </div>
-                      <FloatingOrb size="md" color="accent" position="top-right" />
-                      <FloatingOrb size="sm" color="primary" position="bottom-left" />
-                    </GeometricCard>
-                  </MagneticHover>
-                </ParallaxScroll>
-              </div>
-            </RevealOnScroll>
-          </div>
-        </Container>
       </AbstractBackground>
 
       {/* Services Section */}
@@ -168,10 +137,10 @@ export default async function Home() {
                             <Link href={`/services/${service.slug.current}`}>
                               <Button 
                                 variant="outline" 
-                                size="sm" 
-                                className="group-hover:bg-accent-500 group-hover:text-white group-hover:border-accent-500 transition-all duration-300 border-white text-white hover:bg-white hover:text-primary-900"
+                                size="sm"
+                                className="border-white text-white hover:bg-accent-500 hover:text-white hover:border-accent-500"
                               >
-                                Learn More
+                                Learn More →
                               </Button>
                             </Link>
                           </div>
@@ -226,15 +195,15 @@ export default async function Home() {
                 ))}
           </StaggerContainer>
 
-          <FadeIn direction="up" delay={0.4}>
-            <div className="text-center mt-12">
-              <Link href="/case-studies">
-                <Button size="lg">
-                  View All Case Studies
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
+              <FadeIn direction="up" delay={0.4}>
+                <div className="text-center mt-12">
+                  <Link href="/case-studies">
+                    <Button size="lg">
+                      View All Case Studies →
+                    </Button>
+                  </Link>
+                </div>
+              </FadeIn>
         </Container>
       </Section>
 
@@ -287,15 +256,15 @@ export default async function Home() {
                 ))}
           </StaggerContainer>
 
-          <FadeIn direction="up" delay={0.4}>
-            <div className="text-center mt-12">
-              <Link href="/blog">
-                <Button size="lg">
-                  Read Our Blog
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
+              <FadeIn direction="up" delay={0.4}>
+                <div className="text-center mt-12">
+                  <Link href="/blog">
+                    <Button size="lg">
+                      Read Our Blog →
+                    </Button>
+                  </Link>
+                </div>
+              </FadeIn>
         </Container>
       </Section>
 
@@ -312,18 +281,18 @@ export default async function Home() {
               <p className="text-lg sm:text-xl text-white/90 mb-10 leading-relaxed">
                 Let&apos;s work together to create digital solutions that drive real results for your business.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <Button size="lg" className="bg-white text-primary-600 hover:bg-white/90 hover:scale-105 transform transition-all shadow-xl">
-                    Start Your Project →
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary-600">
-                    Schedule Consultation
-                  </Button>
-                </Link>
-              </div>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link href="/contact">
+                      <Button size="lg" className="w-full sm:w-auto bg-white text-primary-600 hover:bg-white/90">
+                        Start Your Project →
+                      </Button>
+                    </Link>
+                    <Link href="/contact">
+                      <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-primary-600">
+                        Schedule Consultation
+                      </Button>
+                    </Link>
+                  </div>
         </div>
           </FadeIn>
         </Container>
