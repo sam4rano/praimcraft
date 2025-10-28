@@ -65,6 +65,9 @@ export async function generateMetadata({ params }: PageProps) {
 // Enable dynamic params to allow non-pre-rendered slugs
 export const dynamicParams = true;
 
+// Force dynamic rendering for all blog posts
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
   try {
     const posts = await getAllBlogPosts();
