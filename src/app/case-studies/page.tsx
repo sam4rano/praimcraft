@@ -210,10 +210,11 @@ export default function CaseStudiesPage() {
       <Section padding="lg" background="gradient">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
+            <Badge variant="secondary" size="lg" className="mb-4">Proven Results</Badge>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
               Our <span className="gradient-text">Success Stories</span>
             </h1>
-            <p className="text-xl text-neutral-600 mb-8">
+            <p className="text-lg sm:text-xl text-neutral-700 mb-8 leading-relaxed">
               Real results from real clients. See how we've helped businesses achieve their digital goals.
             </p>
           </div>
@@ -224,10 +225,11 @@ export default function CaseStudiesPage() {
       <Section padding="lg" background="white">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-              Featured Case Studies
+            <Badge variant="warning" size="lg" className="mb-4">Featured Projects</Badge>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              Featured <span className="text-accent-600">Case Studies</span>
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
               Our most impactful projects that showcase our expertise and results.
             </p>
           </div>
@@ -304,13 +306,14 @@ export default function CaseStudiesPage() {
       </Section>
 
       {/* All Case Studies */}
-      <Section padding="lg" background="gray">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-              All Case Studies
+            <Badge variant="primary" size="lg" className="mb-4">Complete Portfolio</Badge>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              All <span className="gradient-text-alt">Case Studies</span>
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto">
               Complete portfolio of our successful projects across various industries.
             </p>
           </div>
@@ -369,13 +372,15 @@ export default function CaseStudiesPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section padding="lg" background="gradient">
-        <Container>
+      <Section padding="xl" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary-600 via-primary-600 to-accent-600 opacity-95"></div>
+        <Container className="relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-6">
-              Ready to Create Your Success Story?
+            <Badge variant="primary" size="lg" className="mb-6 bg-white/20 text-white border-white/30">Your Turn</Badge>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
+              Ready to Create Your <span className="text-warning-300">Success Story?</span>
             </h2>
-            <p className="text-xl text-neutral-600 mb-8">
+            <p className="text-lg sm:text-xl text-white/90 mb-10 leading-relaxed">
               Let's work together to achieve similar results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

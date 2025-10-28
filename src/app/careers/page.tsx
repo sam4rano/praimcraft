@@ -131,10 +131,11 @@ export default function CareersPage() {
         <Container>
           <RevealOnScroll direction="up" delay={0.2}>
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-                Our Values
+              <Badge variant="primary" size="lg" className="mb-4">Our Culture</Badge>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+                Our <span className="gradient-text-alt">Values</span>
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
                 These core values guide everything we do and shape our company culture.
               </p>
             </div>
@@ -163,14 +164,15 @@ export default function CareersPage() {
       </Section>
 
       {/* Open Positions */}
-      <Section padding="lg" background="gray">
+      <Section padding="lg" background="gradient">
         <Container>
           <RevealOnScroll direction="up" delay={0.2}>
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-                Open Positions
+              <Badge variant="warning" size="lg" className="mb-4">Start Your Journey</Badge>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+                Open <span className="text-accent-600">Positions</span>
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto">
                 Ready to join our team? Check out our current openings and find your perfect role.
               </p>
             </div>
@@ -241,14 +243,16 @@ export default function CareersPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section padding="lg" background="gradient">
-        <Container>
+      <Section padding="xl" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-600 via-primary-600 to-warning-600 opacity-95"></div>
+        <Container className="relative z-10">
           <RevealOnScroll direction="up" delay={0.2}>
             <div className="text-center max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-neutral-900 mb-6">
-                Don't See Your Role?
+              <Badge variant="primary" size="lg" className="mb-6 bg-white/20 text-white border-white/30">Still Interested?</Badge>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
+                Don't See Your <span className="text-secondary-300">Role?</span>
               </h2>
-              <p className="text-xl text-neutral-600 mb-8">
+              <p className="text-lg sm:text-xl text-white/90 mb-10 leading-relaxed">
                 We're always looking for talented individuals. Send us your resume and let us know how you can contribute to our team.
               </p>
               <Button size="lg">
