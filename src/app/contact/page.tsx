@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
+import { Badge } from '@/components/ui/Badge'
 
 export default function ContactPage() {
   return (
