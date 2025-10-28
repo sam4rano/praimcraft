@@ -135,14 +135,15 @@ export default async function Home() {
       </AbstractBackground>
 
       {/* Services Section */}
-      <Section padding="lg" background="gray">
+      <Section padding="lg" background="white">
         <Container>
           <RevealOnScroll direction="up" delay={0.2}>
             <div className="text-center mb-20">
-              <h2 className="text-5xl font-bold text-neutral-900 mb-6">
-                Our Services
+              <Badge variant="primary" size="lg" className="mb-4">What We Do</Badge>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+                Our <span className="gradient-text">Services</span>
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
                 We offer comprehensive digital solutions to help your business thrive in the modern world.
               </p>
             </div>
@@ -185,14 +186,15 @@ export default async function Home() {
       </Section>
 
       {/* Case Studies Section */}
-      <Section padding="lg" background="gray">
+      <Section padding="lg" background="gradient">
         <Container>
           <FadeIn direction="up" delay={0.2}>
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-                Success Stories
+              <Badge variant="secondary" size="lg" className="mb-4">Our Impact</Badge>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+                Success <span className="text-accent-600">Stories</span>
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto">
                     See how we&apos;ve helped businesses achieve their digital goals.
               </p>
             </div>
@@ -237,14 +239,15 @@ export default async function Home() {
       </Section>
 
       {/* Blog Section */}
-      <Section padding="lg">
+      <Section padding="lg" background="white">
         <Container>
           <FadeIn direction="up" delay={0.2}>
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-                Latest Insights
+              <Badge variant="warning" size="lg" className="mb-4">From Our Blog</Badge>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+                Latest <span className="gradient-text-alt">Insights</span>
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
                 Stay updated with the latest trends and insights in digital marketing and technology.
               </p>
             </div>
@@ -297,24 +300,26 @@ export default async function Home() {
       </Section>
 
       {/* CTA Section */}
-      <Section padding="lg" background="gradient">
-        <Container>
+      <Section padding="xl" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-accent-600 to-secondary-600 opacity-95"></div>
+        <Container className="relative z-10">
           <FadeIn direction="up" delay={0.2}>
             <div className="text-center max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-neutral-900 mb-6">
-                Ready to Transform Your Digital Presence?
+              <Badge variant="primary" size="lg" className="mb-6 bg-white/20 text-white border-white/30">Let's Build Together</Badge>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
+                Ready to Transform Your <span className="text-warning-300">Digital Presence?</span>
               </h2>
-              <p className="text-xl text-neutral-600 mb-8">
-                    Let&apos;s work together to create digital solutions that drive real results for your business.
+              <p className="text-lg sm:text-xl text-white/90 mb-10 leading-relaxed">
+                Let&apos;s work together to create digital solutions that drive real results for your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
-                  <Button size="lg">
-                    Start Your Project
+                  <Button size="lg" className="bg-white text-primary-600 hover:bg-white/90 hover:scale-105 transform transition-all shadow-xl">
+                    Start Your Project →
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary-600">
                     Schedule Consultation
                   </Button>
                 </Link>
