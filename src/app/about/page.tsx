@@ -142,10 +142,11 @@ export default function AboutPage() {
       <Section padding="lg" background="gradient">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
+            <Badge variant="primary" size="lg" className="mb-4">Our Story</Badge>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
               About <span className="gradient-text">Praimcraft</span>
             </h1>
-            <p className="text-xl text-neutral-600 mb-8">
+            <p className="text-lg sm:text-xl text-neutral-700 mb-8 leading-relaxed">
               We&apos;re a team of passionate digital experts dedicated to helping businesses thrive in the modern world through innovative technology solutions.
             </p>
           </div>
@@ -157,8 +158,9 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-neutral-900 mb-6">
-                Our Story
+              <Badge variant="accent" size="md" className="mb-4">Since 2016</Badge>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                Our <span className="text-primary-600">Story</span>
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg text-neutral-700 mb-6">
@@ -188,15 +190,16 @@ export default function AboutPage() {
       </Section>
 
       {/* Stats Section */}
-      <Section padding="lg" background="gray">
-        <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <Section padding="xl" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-accent-600 opacity-95"></div>
+        <Container className="relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-primary-600 mb-2">
+              <div key={index} className="text-center group">
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3 group-hover:scale-110 transition-transform">
                   {stat.value}
                 </div>
-                <div className="text-neutral-600">
+                <div className="text-white/90 text-sm sm:text-base font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -209,10 +212,11 @@ export default function AboutPage() {
       <Section padding="lg" background="white">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-              Our Values
+            <Badge variant="secondary" size="lg" className="mb-4">What Drives Us</Badge>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              Our <span className="gradient-text-alt">Values</span>
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
               The principles that guide everything we do and shape our company culture.
             </p>
           </div>
@@ -236,13 +240,14 @@ export default function AboutPage() {
       </Section>
 
       {/* Team Section */}
-      <Section padding="lg" background="gray">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-              Meet Our Team
+            <Badge variant="warning" size="lg" className="mb-4">The Dream Team</Badge>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              Meet Our <span className="text-accent-600">Team</span>
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto">
               The talented individuals who make Praimcraft a success.
             </p>
           </div>

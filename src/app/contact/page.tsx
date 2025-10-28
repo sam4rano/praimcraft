@@ -12,10 +12,11 @@ export default function ContactPage() {
       <Section padding="lg" background="gradient">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
+            <Badge variant="primary" size="lg" className="mb-4">Let's Talk</Badge>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
               Get In <span className="gradient-text">Touch</span>
             </h1>
-            <p className="text-xl text-neutral-600 mb-8">
+            <p className="text-lg sm:text-xl text-neutral-700 mb-8 leading-relaxed">
               Ready to start your next project? We&apos;d love to hear from you and discuss how we can help your business grow.
             </p>
           </div>
@@ -28,8 +29,9 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold text-neutral-900 mb-6">
-                Send us a message
+              <Badge variant="accent" size="md" className="mb-4">Quick Response</Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                Send us a <span className="text-primary-600">message</span>
               </h2>
               <form id="contact-form" className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
