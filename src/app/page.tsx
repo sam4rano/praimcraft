@@ -57,21 +57,21 @@ export default async function Home() {
       {/* Hero Section */}
       <AbstractBackground variant="hero" intensity="medium" className="min-h-screen">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[70vh] lg:min-h-[80vh] py-12 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center min-h-[70vh] lg:min-h-[80vh] py-16 sm:py-20 lg:py-24">
             <RevealOnScroll direction="left" delay={0.2}>
-              <div className="space-y-6 lg:space-y-8 text-white">
-                <div className="space-y-4 lg:space-y-6">
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1]">
+              <div className="space-y-8 sm:space-y-10 lg:space-y-12 text-white px-2 sm:px-0">
+                <div className="space-y-5 sm:space-y-6 lg:space-y-8">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.15] sm:leading-[1.1]">
                     Digital Solutions That
-                    <span className="gradient-text block">Drive Results</span>
+                    <span className="gradient-text block mt-2">Drive Results</span>
                   </h1>
-                  <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-lg">
+                  <p className="text-base sm:text-lg lg:text-xl text-neutral-300 leading-relaxed max-w-lg">
                         We&apos;re a multi-service digital agency specializing in software development,
                     social media management, analytics, automation, and AI integration.
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 w-full sm:w-auto">
                   <MagneticHover>
                     <GlowEffect intensity="medium" color="accent">
                       <Link href="/contact">
@@ -95,18 +95,18 @@ export default async function Home() {
                 </div>
 
                 <RevealOnScroll direction="up" delay={0.6}>
-                  <div className="flex items-center space-x-12 pt-8">
+                  <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pt-6 sm:pt-8">
                     <div className="text-center group">
-                      <div className="text-3xl font-bold text-accent-400 group-hover:scale-110 transition-transform duration-200">50+</div>
-                      <div className="text-sm text-neutral-300">Projects Completed</div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent-400 group-hover:scale-110 transition-transform duration-200">50+</div>
+                      <div className="text-xs sm:text-sm text-neutral-300 mt-1">Projects Completed</div>
                     </div>
                     <div className="text-center group">
-                      <div className="text-3xl font-bold text-accent-400 group-hover:scale-110 transition-transform duration-200">98%</div>
-                      <div className="text-sm text-neutral-300">Client Satisfaction</div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent-400 group-hover:scale-110 transition-transform duration-200">98%</div>
+                      <div className="text-xs sm:text-sm text-neutral-300 mt-1">Client Satisfaction</div>
                     </div>
                     <div className="text-center group">
-                      <div className="text-3xl font-bold text-accent-400 group-hover:scale-110 transition-transform duration-200">24/7</div>
-                      <div className="text-sm text-neutral-300">Support Available</div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent-400 group-hover:scale-110 transition-transform duration-200">24/7</div>
+                      <div className="text-xs sm:text-sm text-neutral-300 mt-1">Support Available</div>
                     </div>
                   </div>
                 </RevealOnScroll>
@@ -114,14 +114,14 @@ export default async function Home() {
             </RevealOnScroll>
 
             <RevealOnScroll direction="right" delay={0.4}>
-              <div className="relative">
+              <div className="relative mt-10 lg:mt-0">
                 <ParallaxScroll offset={30}>
                   <MagneticHover strength={0.1}>
-                    <GeometricCard glow={true} className="h-96 lg:h-[600px] flex items-center justify-center">
-                      <div className="text-center text-white">
-                        <div className="text-8xl mb-6 animate-bounce-gentle">🚀</div>
-                        <div className="text-2xl font-semibold mb-2">Hero Image Placeholder</div>
-                        <div className="text-sm opacity-80">Modern workspace image</div>
+                    <GeometricCard glow={true} className="h-80 sm:h-96 lg:h-[600px] flex items-center justify-center">
+                      <div className="text-center text-white px-4">
+                        <div className="text-6xl sm:text-7xl lg:text-8xl mb-4 sm:mb-6 animate-bounce-gentle">🚀</div>
+                        <div className="text-xl sm:text-2xl font-semibold mb-2">Hero Image Placeholder</div>
+                        <div className="text-xs sm:text-sm opacity-80">Modern workspace image</div>
                       </div>
                       <FloatingOrb size="md" color="accent" position="top-right" />
                       <FloatingOrb size="sm" color="primary" position="bottom-left" />

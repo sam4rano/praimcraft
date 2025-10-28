@@ -27,9 +27,9 @@ export function Button({
   }
   
   const sizeClasses = {
-    sm: 'px-3 py-1.5 text-sm min-h-[36px]',
-    md: 'px-4 py-2 text-base min-h-[44px]',
-    lg: 'px-6 py-3 text-lg min-h-[52px]',
+    sm: 'px-4 py-2 text-sm sm:text-base min-h-[44px] sm:min-h-[40px] touch-manipulation',
+    md: 'px-5 py-2.5 sm:px-6 sm:py-3 text-base min-h-[48px] sm:min-h-[44px] touch-manipulation',
+    lg: 'px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg min-h-[52px] sm:min-h-[56px] touch-manipulation',
   }
 
   return (

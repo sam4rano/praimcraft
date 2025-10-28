@@ -13,10 +13,10 @@ export function Container({
   ...props 
 }: ContainerProps) {
   const sizeClasses = {
-    sm: 'max-w-3xl',
-    md: 'max-w-4xl',
-    lg: 'max-w-6xl',
-    xl: 'max-w-7xl',
+    sm: 'max-w-2xl sm:max-w-3xl',
+    md: 'max-w-3xl sm:max-w-4xl',
+    lg: 'max-w-5xl sm:max-w-6xl',
+    xl: 'max-w-6xl sm:max-w-7xl',
     full: 'max-w-full',
   }
 
@@ -24,6 +24,7 @@ export function Container({
     <div
       className={cn(
         'container',
+        'mobile-safe-padding',
         sizeClasses[size],
         className
       )}
