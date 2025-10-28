@@ -62,11 +62,21 @@ export async function generateMetadata({ params }: PageProps) {
   });
 }
 
+// Enable dynamic params to allow non-pre-rendered slugs
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  const posts = await getAllBlogPosts().catch(() => []);
-  return posts.map((post: BlogPost) => ({
-    slug: post.slug.current,
-  }));
+  try {
+    const posts = await getAllBlogPosts();
+    console.log(`[Build] Found ${posts.length} blog posts for static generation`);
+    return posts.map((post: BlogPost) => ({
+      slug: post.slug.current,
+    }));
+  } catch (error) {
+    console.error('[Build] Error fetching blog posts for static params:', error);
+    // Return empty array to allow dynamic rendering
+    return [];
+  }
 }
 
 export default async function BlogPostPage({ params }: PageProps) {

@@ -39,9 +39,18 @@ interface BlogPost {
 export default async function Home() {
   // Fetch real data from Sanity with fallbacks
   const [services, caseStudies, blogPosts] = await Promise.all([
-    getAllServices().catch(() => []),
-    getFeaturedCaseStudies().catch(() => []),
-    getFeaturedBlogPosts().catch(() => []),
+    getAllServices().catch((error) => {
+      console.error('Error fetching services:', error);
+      return [];
+    }),
+    getFeaturedCaseStudies().catch((error) => {
+      console.error('Error fetching case studies:', error);
+      return [];
+    }),
+    getFeaturedBlogPosts().catch((error) => {
+      console.error('Error fetching blog posts:', error);
+      return [];
+    }),
   ]);
   return (
     <div className="min-h-screen">
