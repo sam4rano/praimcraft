@@ -158,7 +158,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge variant="accent" size="md" className="mb-4">Since 2016</Badge>
+              <Badge variant="secondary" size="md" className="mb-4">Since 2016</Badge>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                 Our <span className="text-primary-600">Story</span>
               </h2>

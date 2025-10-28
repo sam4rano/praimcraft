@@ -30,7 +30,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <Badge variant="accent" size="md" className="mb-4">Quick Response</Badge>
+              <Badge variant="secondary" size="md" className="mb-4">Quick Response</Badge>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                 Send us a <span className="text-primary-600">message</span>
               </h2>
