@@ -11,42 +11,66 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Praimcraft Brand Colors - SPINX Digital Inspired
+        // Praimcraft Modern Brand Colors - Professional & Vibrant
         primary: {
-          50: "#f8fafc",
-          100: "#f1f5f9",
-          200: "#e2e8f0",
-          300: "#cbd5e1",
-          400: "#94a3b8",
-          500: "#1e293b", // Main brand navy - SPINX inspired
-          600: "#0f172a",
-          700: "#0c1421",
-          800: "#0a0f1a",
-          900: "#080c13",
+          50: "#eff6ff",   // Very light blue
+          100: "#dbeafe",  // Light blue
+          200: "#bfdbfe",  // Soft blue
+          300: "#93c5fd",  // Medium light blue
+          400: "#60a5fa",  // Sky blue
+          500: "#3b82f6",  // Main brand blue - Modern, trustworthy
+          600: "#2563eb",  // Rich blue
+          700: "#1d4ed8",  // Deep blue
+          800: "#1e40af",  // Dark blue
+          900: "#1e3a8a",  // Navy blue
         },
         accent: {
-          50: "#fef7ff",
-          100: "#fceeff",
-          200: "#f8ddff",
-          300: "#f2bbff",
-          400: "#e888ff",
-          500: "#d946ef", // Vibrant purple accent
-          600: "#c026d3",
-          700: "#a21caf",
-          800: "#86198f",
-          900: "#701a75",
+          50: "#fef2f2",   // Very light rose
+          100: "#fff1f2",  // Light pink
+          200: "#ffe4e6",  // Soft pink
+          300: "#fda4af",  // Medium pink
+          400: "#fb7185",  // Coral pink
+          500: "#f43f5e",  // Vibrant rose - Eye-catching, energetic
+          600: "#e11d48",  // Deep rose
+          700: "#be123c",  // Rich red
+          800: "#9f1239",  // Dark red
+          900: "#881337",  // Deep burgundy
+        },
+        secondary: {
+          50: "#f0fdf4",   // Very light green
+          100: "#dcfce7",  // Light green
+          200: "#bbf7d0",  // Soft green
+          300: "#86efac",  // Medium green
+          400: "#4ade80",  // Bright green
+          500: "#22c55e",  // Success green - Fresh, positive
+          600: "#16a34a",  // Rich green
+          700: "#15803d",  // Deep green
+          800: "#166534",  // Dark green
+          900: "#14532d",  // Forest green
+        },
+        warning: {
+          50: "#fffbeb",   // Very light amber
+          100: "#fef3c7",  // Light amber
+          200: "#fde68a",  // Soft yellow
+          300: "#fcd34d",  // Medium yellow
+          400: "#fbbf24",  // Bright amber
+          500: "#f59e0b",  // Warning amber - Attention-grabbing
+          600: "#d97706",  // Rich amber
+          700: "#b45309",  // Deep amber
+          800: "#92400e",  // Dark amber
+          900: "#78350f",  // Bronze
         },
         neutral: {
-          50: "#fafafa",
-          100: "#f5f5f5",
-          200: "#e5e5e5",
-          300: "#d4d4d4",
-          400: "#a3a3a3",
-          500: "#737373",
-          600: "#525252",
-          700: "#404040",
-          800: "#262626",
-          900: "#171717",
+          50: "#fafafa",   // Almost white
+          100: "#f5f5f5",  // Very light gray
+          200: "#e5e5e5",  // Light gray
+          300: "#d4d4d4",  // Soft gray
+          400: "#a3a3a3",  // Medium gray
+          500: "#737373",  // Gray
+          600: "#525252",  // Dark gray
+          700: "#404040",  // Darker gray
+          800: "#262626",  // Very dark gray
+          900: "#171717",  // Almost black
         },
       },
       fontFamily: {
