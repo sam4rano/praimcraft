@@ -82,14 +82,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <div>
               {/* Breadcrumb */}
               <nav className="flex mb-6">
-                <ol className="flex items-center space-x-2 text-sm text-neutral-600">
+                <ol className="flex items-center space-x-2 text-sm text-white/70">
                   <li>
-                    <Link href="/case-studies" className="hover:text-primary-600">
+                    <Link href="/case-studies" className="hover:text-[#00E6FF]">
                       Case Studies
                     </Link>
                   </li>
-                  <li className="text-neutral-400">/</li>
-                  <li className="text-neutral-900 font-medium">
+                  <li className="text-white/50">/</li>
+                  <li className="text-white font-medium">
                     {study.title}
                   </li>
                 </ol>
@@ -99,13 +99,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 <Badge variant="primary" size="lg">
                   {study.industry}
                 </Badge>
-                <h1 className="text-4xl lg:text-5xl font-bold text-neutral-900">
-                  {study.title}
+                <h1 className="text-4xl lg:text-5xl font-bold text-white">
+                  <span className="gradient-text">{study.title}</span>
                 </h1>
-                <p className="text-xl text-neutral-600">
+                <p className="text-xl text-white/95 font-light">
                   <strong>Client:</strong> {study.client}
                 </p>
-                <p className="text-lg text-neutral-600">
+                <p className="text-lg text-white/95 font-light">
                   <strong>Duration:</strong> {study.duration}
                 </p>
               </div>
@@ -121,7 +121,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
             <div className="relative">
               <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-strong">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00E6FF]/20 to-[#A066FF]/20 flex items-center justify-center">
                   <div className="text-white text-center">
                     <div className="text-8xl mb-4">📈</div>
                     <div className="text-xl font-semibold">Case Study Image</div>
@@ -135,14 +135,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </Section>
 
       {/* Challenge Section */}
-      <Section padding="lg" background="white">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-6">
-              The Challenge
+            <h2 className="text-3xl font-bold text-white mb-6">
+              The <span className="gradient-text">Challenge</span>
             </h2>
             <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-neutral-700 leading-relaxed">
+              <p className="text-lg text-white/95 leading-relaxed font-light">
                 {study.challenge}
               </p>
             </div>
@@ -151,14 +151,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </Section>
 
       {/* Solution Section */}
-      <Section padding="lg" background="gray">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-6">
-              Our Solution
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Our <span className="gradient-text">Solution</span>
             </h2>
             <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-neutral-700 leading-relaxed">
+              <p className="text-lg text-white/95 leading-relaxed font-light">
                 {study.solution}
               </p>
             </div>
@@ -167,24 +167,24 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </Section>
 
       {/* Results Section */}
-      <Section padding="lg" background="white">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-12 text-center">
-              The Results
+            <h2 className="text-3xl font-bold text-white mb-12 text-center">
+              The <span className="gradient-text">Results</span>
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {study.results.map((result, index) => (
                 <Card key={index} className="text-center">
                   <CardContent className="p-8">
-                    <div className="text-4xl font-bold text-primary-600 mb-2">
+                    <div className="text-4xl font-bold text-[#00E6FF] mb-2">
                       {result.value}
                     </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                    <h3 className="text-lg font-semibold text-white mb-2">
                       {result.label}
                     </h3>
-                    <p className="text-sm text-neutral-600">
+                    <p className="text-sm text-white/80">
                       {result.description}
                     </p>
                   </CardContent>
@@ -197,18 +197,18 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
       {/* Gallery Section */}
       {study.gallery && study.gallery.length > 0 && (
-        <Section padding="lg" background="gray">
+        <Section padding="lg" background="gradient">
           <Container>
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-12 text-center">
-                Project Gallery
+              <h2 className="text-3xl font-bold text-white mb-12 text-center">
+                Project <span className="gradient-text">Gallery</span>
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {study.gallery.map((image, index) => (
-                  <div key={index} className="relative h-64 rounded-xl overflow-hidden shadow-soft">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
-                      <div className="text-center text-primary-600">
+                  <div key={index} className="relative h-64 rounded-xl overflow-hidden glass-card">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#00E6FF]/20 to-[#A066FF]/20 flex items-center justify-center">
+                      <div className="text-center text-white">
                         <div className="text-4xl mb-2">🖼️</div>
                         <div className="text-sm font-medium">Project Image</div>
                         <div className="text-xs opacity-80">{image.alt}</div>
@@ -224,13 +224,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
       {/* Technologies Section */}
       {study.technologies && (
-        <Section padding="lg" background="white">
+        <Section padding="lg" background="gradient">
           <Container>
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-6">
-                Technologies Used
+              <h2 className="text-3xl font-bold text-white mb-6">
+                Technologies <span className="gradient-text">Used</span>
               </h2>
-              <p className="text-lg text-neutral-600 mb-8">
+              <p className="text-lg text-white/95 mb-8 font-light">
                 Modern tools and technologies that powered this project.
               </p>
               
@@ -250,19 +250,19 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <Section padding="lg" background="gradient">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white rounded-2xl p-12 shadow-strong">
+            <div className="glass-card p-12">
               <div className="text-6xl mb-6">💬</div>
-              <blockquote className="text-2xl font-medium text-neutral-900 mb-8 leading-relaxed">
+              <blockquote className="text-2xl font-medium text-white mb-8 leading-relaxed">
                 "{study.testimonial.quote}"
               </blockquote>
-              <div className="border-t border-neutral-200 pt-6">
-                <p className="text-lg font-semibold text-neutral-900">
+              <div className="border-t border-white/20 pt-6">
+                <p className="text-lg font-semibold text-white">
                   {study.testimonial.author}
                 </p>
-                <p className="text-neutral-600">
+                <p className="text-white/80">
                   {study.testimonial.role}
                 </p>
-                <p className="text-sm text-neutral-500 mt-2">
+                <p className="text-sm text-white/70 mt-2">
                   {study.testimonial.company}
                 </p>
               </div>
@@ -272,35 +272,35 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </Section>
 
       {/* Project Details */}
-      <Section padding="lg" background="white">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-8 text-center">
-              Project Details
+            <h2 className="text-3xl font-bold text-white mb-8 text-center">
+              Project <span className="gradient-text">Details</span>
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-neutral-900 mb-4">
+                  <h3 className="text-xl font-bold text-white mb-4">
                     Project Information
                   </h3>
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-neutral-600">Client:</span>
-                      <span className="font-medium">{study.client}</span>
+                      <span className="text-white/70">Client:</span>
+                      <span className="font-medium text-white">{study.client}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-neutral-600">Industry:</span>
+                      <span className="text-white/70">Industry:</span>
                       <span className="font-medium">{study.industry}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-neutral-600">Duration:</span>
-                      <span className="font-medium">{study.duration}</span>
+                      <span className="text-white/70">Duration:</span>
+                      <span className="font-medium text-white">{study.duration}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-neutral-600">Services:</span>
-                      <span className="font-medium">{study.services.length} services</span>
+                      <span className="text-white/70">Services:</span>
+                      <span className="font-medium text-white">{study.services.length} services</span>
                     </div>
                   </div>
                 </CardContent>
@@ -308,14 +308,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-neutral-900 mb-4">
+                  <h3 className="text-xl font-bold text-white mb-4">
                     Team
                   </h3>
                   <div className="space-y-2">
                     {study.team.map((member, index) => (
                       <div key={index} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                        <span className="text-neutral-700">{member}</span>
+                        <div className="w-2 h-2 bg-[#00E6FF] rounded-full"></div>
+                        <span className="text-white/90">{member}</span>
                       </div>
                     ))}
                   </div>
@@ -327,13 +327,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </Section>
 
       {/* CTA Section */}
-      <Section padding="lg" background="gray">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-6">
-              Ready to Achieve Similar Results?
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Ready to Achieve Similar <span className="gradient-text">Results?</span>
             </h2>
-            <p className="text-xl text-neutral-600 mb-8">
+            <p className="text-xl text-white/95 mb-8 font-light">
               Let's discuss how we can help your business achieve its digital goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -349,7 +349,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </Section>
 
       {/* Navigation */}
-      <Section padding="sm" background="white">
+      <Section padding="sm" background="gradient">
         <Container>
           <div className="flex justify-between items-center">
             <Button variant="outline">

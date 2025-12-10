@@ -170,7 +170,7 @@ export default function CareersPage() {
             <div className="text-center mb-16">
               <Badge variant="warning" size="lg" className="mb-4">Start Your Journey</Badge>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                Open <span className="text-accent-600">Positions</span>
+                Open <span className="text-[#00E6FF]">Positions</span>
               </h2>
               <p className="text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto">
                 Ready to join our team? Check out our current openings and find your perfect role.

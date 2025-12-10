@@ -4,6 +4,7 @@ import { Section } from '@/components/ui/Section';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
+import { AbstractBackground } from '@/components/visual/AbstractBackground';
 import { getAllBlogPosts, getAllCategories } from '@/lib/sanity/fetch';
 import { generateMetadata as generateSEOMetadata, pageMetadata } from '@/lib/seo/metadata';
 
@@ -46,22 +47,25 @@ export default async function BlogPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <Section padding="lg" background="gradient">
-        <Container>
-          <div className="text-center max-w-4xl mx-auto px-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-6">
-              Our <span className="gradient-text">Blog</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-neutral-600 mb-8">
-              Insights, tips, and strategies to help your business thrive in the digital world.
-            </p>
-          </div>
-        </Container>
-      </Section>
+      <AbstractBackground variant="hero" intensity="medium" className="min-h-[60vh]">
+        <Section padding="lg" background="gradient">
+          <Container>
+            <div className="text-center max-w-4xl mx-auto px-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
+                Our <span className="gradient-text">Blog</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-white/95 mb-8 font-light">
+                Insights, tips, and strategies to help your business thrive in the digital world.
+              </p>
+            </div>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* Categories Filter */}
-      <Section padding="sm" background="white">
-        <Container>
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="sm" background="gradient">
+          <Container>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <Button variant="primary" size="sm">
               All Posts
@@ -72,12 +76,14 @@ export default async function BlogPage() {
               </Button>
             ))}
           </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* Blog Posts Grid */}
-      <Section padding="lg" background="white">
-        <Container>
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="lg" background="gradient">
+          <Container>
           {posts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post: BlogPost) => (
@@ -90,17 +96,17 @@ export default async function BlogPage() {
                             {post.categories[0].title}
                           </Badge>
                         )}
-                        <h3 className="text-xl font-bold text-neutral-900 line-clamp-2 hover:text-primary-600 transition-colors duration-200">
+                        <h3 className="text-xl font-bold text-white line-clamp-2 hover:text-[#00E6FF] transition-colors duration-200">
                           {post.title}
                         </h3>
-                        <p className="text-neutral-600 line-clamp-3">
+                        <p className="text-white/80 line-clamp-3">
                           {typeof post.excerpt === 'string' ? post.excerpt : 'Preview content available'}
                         </p>
-                        <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
-                          <span className="text-sm text-neutral-500">
+                        <div className="flex items-center justify-between pt-4 border-t border-white/20">
+                          <span className="text-sm text-white/70">
                             By {post.author?.name || "Unknown Author"}
                           </span>
-                          <span className="text-sm text-neutral-500">
+                          <span className="text-sm text-white/70">
                             {new Date(post.publishedAt).toLocaleDateString()}
                           </span>
                         </div>
@@ -112,10 +118,10 @@ export default async function BlogPage() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 No blog posts yet
               </h3>
-              <p className="text-neutral-600 mb-8">
+              <p className="text-white/80 mb-8">
                 Check back soon for our latest insights and updates.
               </p>
             </div>
@@ -129,36 +135,39 @@ export default async function BlogPage() {
               </Button>
             </div>
           )}
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* Newsletter Signup */}
-      <Section padding="lg" background="gray">
-        <Container>
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="lg" background="gradient">
+          <Container>
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">
-              Stay Updated
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Stay <span className="gradient-text">Updated</span>
             </h2>
-            <p className="text-lg text-neutral-600 mb-8">
+            <p className="text-lg text-white/95 mb-8 font-light">
               Get the latest insights and tips delivered straight to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="flex-1 px-4 py-3 rounded-lg glass-soft border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/40 text-white placeholder:text-white/50"
                 readOnly
               />
               <Button size="lg" disabled>
                 Subscribe →
               </Button>
             </div>
-            <p className="text-sm text-neutral-500 mt-2">
+            <p className="text-sm text-white/70 mt-2">
               Newsletter signup coming soon
             </p>
           </div>
         </Container>
       </Section>
+      </AbstractBackground>
     </div>
   );
 }

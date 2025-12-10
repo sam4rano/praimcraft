@@ -39,7 +39,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white">
+    <footer className="bg-[#0A0F1F] text-white border-t border-[#00E6FF]/10 relative z-10" style={{ backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(0,0,0,0.3) 0%, transparent 50%)' }}>
       <Container>
         <div className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -51,7 +51,7 @@ export function Footer() {
                 </div>
                 <span className="text-xl font-bold">Praimcraft</span>
               </Link>
-              <p className="text-neutral-400 mb-6 max-w-sm">
+              <p className="text-white/70 mb-6 max-w-sm">
                 Multi-service digital agency specializing in software development, 
                 social media management, analytics, automation, and AI integration.
               </p>
@@ -60,7 +60,7 @@ export function Footer() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-neutral-400 hover:text-white transition-colors duration-200"
+                    className="text-white/70 hover:text-white transition-colors duration-200"
                   >
                     <span className="sr-only">{item.name}</span>
                     <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
@@ -79,7 +79,7 @@ export function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-neutral-400 hover:text-white transition-colors duration-200"
+                      className="text-white/70 hover:text-white transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -96,7 +96,7 @@ export function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-neutral-400 hover:text-white transition-colors duration-200"
+                      className="text-white/70 hover:text-white transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -113,7 +113,7 @@ export function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-neutral-400 hover:text-white transition-colors duration-200"
+                      className="text-white/70 hover:text-white transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -130,7 +130,7 @@ export function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-neutral-400 hover:text-white transition-colors duration-200"
+                      className="text-white/70 hover:text-white transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -142,9 +142,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-neutral-800 py-6">
+        <div className="border-t border-white/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-neutral-400 text-sm">
+            <p className="text-white/70 text-sm">
               © {new Date().getFullYear()} Praimcraft. All rights reserved.
             </p>
           </div>

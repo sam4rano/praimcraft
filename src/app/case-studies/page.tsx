@@ -3,6 +3,7 @@ import { Section } from '@/components/ui/Section'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
+import { AbstractBackground } from '@/components/visual/AbstractBackground'
 import Link from 'next/link'
 
 // Placeholder data - will be replaced with Sanity data
@@ -207,29 +208,32 @@ export default function CaseStudiesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <Section padding="lg" background="gradient">
-        <Container>
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="secondary" size="lg" className="mb-4">Proven Results</Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
-              Our <span className="gradient-text">Success Stories</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-neutral-700 mb-8 leading-relaxed">
-              Real results from real clients. See how we've helped businesses achieve their digital goals.
-            </p>
-          </div>
-        </Container>
-      </Section>
+      <AbstractBackground variant="hero" intensity="medium" className="min-h-[60vh]">
+        <Section padding="lg" background="gradient">
+          <Container>
+            <div className="text-center max-w-4xl mx-auto">
+              <Badge variant="secondary" size="lg" className="mb-4">Proven Results</Badge>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 text-white">
+                Our <span className="gradient-text">Success Stories</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-white/95 mb-8 leading-relaxed font-light">
+                Real results from real clients. See how we've helped businesses achieve their digital goals.
+              </p>
+            </div>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* Featured Case Studies */}
-      <Section padding="lg" background="white">
-        <Container>
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="lg" background="gradient">
+          <Container>
           <div className="text-center mb-16">
             <Badge variant="warning" size="lg" className="mb-4">Featured Projects</Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Featured <span className="text-accent-600">Case Studies</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+              Featured <span className="gradient-text">Case Studies</span>
             </h2>
-            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/95 max-w-3xl mx-auto font-light">
               Our most impactful projects that showcase our expertise and results.
             </p>
           </div>
@@ -238,8 +242,8 @@ export default function CaseStudiesPage() {
             {featuredCaseStudies.map((study) => (
               <Card key={study.id} className="h-full hover:-translate-y-1 transform transition-all duration-300">
                 <div className="relative h-64 overflow-hidden rounded-t-xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
-                    <div className="text-center text-primary-600">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00E6FF]/20 to-[#A066FF]/20 flex items-center justify-center">
+                    <div className="text-center text-white">
                       <div className="text-6xl mb-4">📈</div>
                       <div className="text-lg font-semibold">Case Study Image</div>
                       <div className="text-sm opacity-80">{study.title}</div>
@@ -252,30 +256,30 @@ export default function CaseStudiesPage() {
                       <Badge variant="primary" size="sm">
                         {study.industry}
                       </Badge>
-                      <span className="text-sm text-neutral-500">
+                      <span className="text-sm text-white/60">
                         {study.duration}
                       </span>
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-neutral-900">
+                    <h3 className="text-2xl font-bold text-white">
                       {study.title}
                     </h3>
                     
-                    <p className="text-neutral-600">
+                    <p className="text-white/80">
                       <strong>Client:</strong> {study.client}
                     </p>
                     
-                    <p className="text-neutral-600">
+                    <p className="text-white/80">
                       {study.challenge}
                     </p>
                     
                     <div className="grid grid-cols-2 gap-4 pt-4">
                       {study.results.slice(0, 2).map((result, index) => (
                         <div key={index} className="text-center">
-                          <div className="text-2xl font-bold text-primary-600">
+                          <div className="text-2xl font-bold text-[#00E6FF]">
                             {result.value}
                           </div>
-                          <div className="text-sm text-neutral-600">
+                          <div className="text-sm text-white/80">
                             {result.label}
                           </div>
                         </div>
@@ -302,18 +306,20 @@ export default function CaseStudiesPage() {
               </Card>
             ))}
           </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* All Case Studies */}
-      <Section padding="lg" background="gradient">
-        <Container>
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="lg" background="gradient">
+          <Container>
           <div className="text-center mb-16">
             <Badge variant="primary" size="lg" className="mb-4">Complete Portfolio</Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              All <span className="gradient-text-alt">Case Studies</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+              All <span className="gradient-text">Case Studies</span>
             </h2>
-            <p className="text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/95 max-w-3xl mx-auto font-light">
               Complete portfolio of our successful projects across various industries.
             </p>
           </div>
@@ -322,8 +328,8 @@ export default function CaseStudiesPage() {
             {caseStudies.map((study) => (
               <Card key={study.id} className="h-full hover:-translate-y-1 transform transition-all duration-300">
                 <div className="relative h-48 overflow-hidden rounded-t-xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
-                    <div className="text-center text-primary-600">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00E6FF]/20 to-[#A066FF]/20 flex items-center justify-center">
+                    <div className="text-center text-white">
                       <div className="text-4xl mb-2">📊</div>
                       <div className="text-sm font-medium">Case Study</div>
                     </div>
@@ -335,25 +341,25 @@ export default function CaseStudiesPage() {
                       <Badge variant="secondary" size="sm">
                         {study.industry}
                       </Badge>
-                      <span className="text-xs text-neutral-500">
+                      <span className="text-xs text-white/60">
                         {study.duration}
                       </span>
                     </div>
                     
-                    <h3 className="text-lg font-bold text-neutral-900 line-clamp-2">
+                    <h3 className="text-lg font-bold text-white line-clamp-2">
                       {study.title}
                     </h3>
                     
-                    <p className="text-sm text-neutral-600">
+                    <p className="text-sm text-white/80">
                       <strong>Client:</strong> {study.client}
                     </p>
                     
                     <div className="flex items-center justify-between pt-2">
                       <div className="text-center">
-                        <div className="text-lg font-bold text-primary-600">
+                        <div className="text-lg font-bold text-[#00E6FF]">
                           {study.results[0]?.value}
                         </div>
-                        <div className="text-xs text-neutral-600">
+                        <div className="text-xs text-white/80">
                           {study.results[0]?.label}
                         </div>
                       </div>
@@ -368,19 +374,20 @@ export default function CaseStudiesPage() {
               </Card>
             ))}
           </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* CTA Section */}
-      <Section padding="xl" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary-600 via-primary-600 to-accent-600 opacity-95"></div>
-        <Container className="relative z-10">
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="xl" className="relative overflow-hidden">
+          <Container className="relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="primary" size="lg" className="mb-6 bg-white/20 text-white border-white/30">Your Turn</Badge>
+            <Badge variant="primary" size="lg" className="mb-6 glass-button text-white">Your Turn</Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
-              Ready to Create Your <span className="text-warning-300">Success Story?</span>
+              Ready to Create Your <span className="gradient-text">Success Story?</span>
             </h2>
-            <p className="text-lg sm:text-xl text-white/90 mb-10 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/95 mb-10 leading-relaxed font-light">
               Let's work together to achieve similar results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -392,8 +399,9 @@ export default function CaseStudiesPage() {
               </Button>
             </div>
           </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      </AbstractBackground>
     </div>
   )
 }

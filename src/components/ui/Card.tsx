@@ -12,6 +12,7 @@ export function Card({ hover = false, className, children, ...props }: CardProps
       className={cn(
         'card',
         hover && 'card-hover',
+        'glass-card',
         className
       )}
       {...props}

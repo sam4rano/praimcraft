@@ -27,11 +27,57 @@ html {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: #0A0F1F;
+  background-image: 
+    linear-gradient(90deg, rgba(0, 230, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(0, 230, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 20% 30%, rgba(0, 230, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(160, 102, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 45, 175, 0.06) 0%, transparent 50%);
+  background-size: 
+    80px 80px,
+    80px 80px,
+    1200px 1200px,
+    1000px 1000px,
+    800px 800px;
+  background-position: 
+    0 0,
+    0 0,
+    0 0,
+    100% 100%,
+    50% 50%;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 230, 255, 0.03) 2px,
+      rgba(0, 230, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(160, 102, 255, 0.03) 2px,
+      rgba(160, 102, 255, 0.03) 4px
+    );
+  pointer-events: none;
+  z-index: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,6 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.025em;
+  color: #ffffff;
 }
 
 @layer base {
@@ -68,11 +115,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-500 via-accent-500 to-accent-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#00E6FF] via-[#A066FF] to-[#FF2DAF] bg-clip-text text-transparent font-bold;
   }
   
   .gradient-text-alt {
-    @apply bg-gradient-to-r from-accent-500 via-secondary-500 to-warning-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#00E6FF] via-[#A066FF] to-[#FF2DAF] bg-clip-text text-transparent;
   }
   
   .gradient-bg {
@@ -97,6 +144,51 @@ h1, h2, h3, h4, h5, h6 {
   
   .dark-gradient {
     @apply bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900;
+  }
+  
+  /* Glassmorphism utilities - Frosted white/blue with 8-20% opacity */
+  .glass {
+    @apply bg-white/10 border border-[#00E6FF]/20;
+  }
+  
+  .glass-strong {
+    @apply bg-white/20 border border-[#00E6FF]/30;
+  }
+  
+  .glass-soft {
+    @apply bg-white/5 border border-[#00E6FF]/10;
+  }
+  
+  .glass-dark {
+    @apply bg-[#0A0F1F]/95 border border-[#00E6FF]/15;
+  }
+  
+  .glass-card {
+    @apply bg-white/10 rounded-2xl shadow-2xl shadow-[#00E6FF]/10 border border-[#00E6FF]/25 hover:bg-white/20 hover:border-[#00E6FF]/40 transition-all duration-300;
+  }
+  
+  .glass-button {
+    @apply bg-white/10 rounded-lg border border-[#00E6FF]/30 hover:bg-white/20 hover:border-[#00E6FF]/50 transition-all duration-300 shadow-lg shadow-[#00E6FF]/20;
+  }
+  
+  .glass-nav {
+    @apply bg-[#0A0F1F]/90 border-b border-[#00E6FF]/20 shadow-xl;
+  }
+  
+  .glass-input {
+    @apply bg-white/10 border border-[#00E6FF]/25 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E6FF]/50 focus:border-[#00E6FF]/50 text-white placeholder:text-white/50;
+  }
+  
+  .glass-select {
+    @apply bg-white/10 border border-[#00E6FF]/25 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E6FF]/50 focus:border-[#00E6FF]/50 text-white;
+  }
+  
+  .glass-select option {
+    @apply bg-[#0A0F1F] text-white;
+  }
+  
+  .glass-textarea {
+    @apply bg-white/10 border border-[#00E6FF]/25 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E6FF]/50 focus:border-[#00E6FF]/50 text-white placeholder:text-white/50;
   }
   
   /* Mobile-first responsive utilities */
@@ -128,12 +220,17 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Focus management for accessibility */
   .focus-visible {
-    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-[#00E6FF]/50 focus:ring-offset-2 focus:ring-offset-[#0A0F1F];
   }
   
   /* Skip to content link */
   .skip-link {
-    @apply absolute -top-40 left-4 z-50 bg-primary-600 text-white px-4 py-2 rounded-md font-medium transition-all duration-200;
+    @apply absolute -top-40 left-4 z-50 bg-[#00E6FF] text-[#0A0F1F] px-4 py-2 rounded-md font-medium transition-all duration-200;
+  }
+  
+  /* Neon gradient button */
+  .neon-button {
+    @apply bg-gradient-to-r from-[#00E6FF] via-[#A066FF] to-[#FF2DAF] text-white font-semibold rounded-lg px-6 py-3 hover:shadow-lg hover:shadow-[#00E6FF]/50 transition-all duration-300;
   }
   
   .skip-link:focus {
@@ -186,19 +283,19 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 focus:ring-primary-500 shadow-soft hover:shadow-medium;
+    @apply btn bg-gradient-to-r from-[#00E6FF] via-[#A066FF] to-[#FF2DAF] text-white font-semibold rounded-lg px-6 py-3 hover:shadow-lg hover:shadow-[#00E6FF]/50 transition-all duration-300 border-0;
   }
   
   .btn-secondary {
-    @apply btn bg-white text-primary-600 border border-primary-200 hover:bg-primary-50 active:bg-primary-100 focus:ring-primary-500 shadow-soft hover:shadow-medium;
+    @apply btn glass-button text-white font-semibold hover:shadow-xl hover:shadow-[#00E6FF]/20 border-[#00E6FF]/30;
   }
   
   .btn-outline {
-    @apply btn bg-transparent text-primary-600 border-2 border-primary-600 hover:bg-primary-600 hover:text-white active:bg-primary-700 focus:ring-primary-500;
+    @apply btn bg-[#0A0F1F]/80 text-white border border-[#00E6FF]/40 hover:bg-[#0A0F1F]/90 hover:border-[#00E6FF]/60 active:bg-[#0A0F1F] focus:ring-[#00E6FF]/50 transition-all duration-300;
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-soft hover:shadow-medium transition-shadow duration-300 border border-neutral-100;
+    @apply glass-card;
   }
   
   .card-hover {

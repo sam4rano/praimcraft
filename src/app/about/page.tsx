@@ -1,9 +1,12 @@
+'use client'
+
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
+import { AbstractBackground } from '@/components/visual/AbstractBackground'
 
 // Placeholder data - will be replaced with Sanity data
 const teamMembers = [
@@ -139,44 +142,47 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <Section padding="lg" background="gradient">
-        <Container>
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="primary" size="lg" className="mb-4">Our Story</Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
-              About <span className="gradient-text">Praimcraft</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-neutral-700 mb-8 leading-relaxed">
-              We&apos;re a team of passionate digital experts dedicated to helping businesses thrive in the modern world through innovative technology solutions.
-            </p>
-          </div>
-        </Container>
-      </Section>
+      <AbstractBackground variant="hero" intensity="medium" className="min-h-[60vh]">
+        <Section padding="lg" background="gradient">
+          <Container>
+            <div className="text-center max-w-4xl mx-auto">
+              <Badge variant="primary" size="lg" className="mb-4">Our Story</Badge>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
+                About <span className="gradient-text">Praimcraft</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-white/95 mb-8 leading-relaxed font-light">
+                We&apos;re a team of passionate digital experts dedicated to helping businesses thrive in the modern world through innovative technology solutions.
+              </p>
+            </div>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* Company Story */}
-      <Section padding="lg" background="white">
-        <Container>
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="lg" background="gradient">
+          <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge variant="secondary" size="md" className="mb-4">Since 2016</Badge>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Our <span className="text-primary-600">Story</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">
+                Our <span className="text-[#00E6FF]">Story</span>
               </h2>
               <div className="prose prose-lg max-w-none">
-                <p className="text-lg text-neutral-700 mb-6">
+                <p className="text-lg text-white/95 mb-6 font-light">
                   Founded in 2016, Praimcraft began as a small team of developers and designers with a shared vision: to bridge the gap between technology and business success. We saw that many companies were struggling to adapt to the rapidly changing digital landscape.
                 </p>
-                <p className="text-lg text-neutral-700 mb-6">
+                <p className="text-lg text-white/95 mb-6 font-light">
                   Today, we&apos;ve grown into a full-service digital agency that has helped over 100 businesses transform their digital presence. From startups to enterprise companies, we&apos;ve delivered solutions that drive real results.
                 </p>
-                <p className="text-lg text-neutral-700">
+                <p className="text-lg text-white/95 font-light">
                   Our mission is simple: to empower businesses with the tools, strategies, and technology they need to succeed in the digital age. We believe that every business, regardless of size, deserves access to world-class digital solutions.
                 </p>
               </div>
             </div>
             <div className="relative">
-              <div className="relative h-96 rounded-2xl overflow-hidden shadow-strong">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
+              <div className="relative h-96 rounded-2xl overflow-hidden shadow-strong glass-card">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00E6FF]/20 to-[#A066FF]/20 flex items-center justify-center">
                   <div className="text-white text-center">
                     <div className="text-8xl mb-4">🏢</div>
                     <div className="text-xl font-semibold">Our Office</div>
@@ -186,37 +192,45 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* Stats Section */}
-      <Section padding="xl" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-accent-600 opacity-95"></div>
-        <Container className="relative z-10">
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="xl" background="gradient" className="relative overflow-hidden">
+          <Container className="relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3 group-hover:scale-110 transition-transform">
+                <div className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 group-hover:scale-110 transition-transform ${
+                  index === 0 ? 'text-[#00E6FF] drop-shadow-[0_0_10px_rgba(0,230,255,0.5)]' :
+                  index === 1 ? 'text-[#A066FF] drop-shadow-[0_0_10px_rgba(160,102,255,0.5)]' :
+                  index === 2 ? 'text-[#FF2DAF] drop-shadow-[0_0_10px_rgba(255,45,175,0.5)]' :
+                  'text-[#00E6FF] drop-shadow-[0_0_10px_rgba(0,230,255,0.5)]'
+                }`}>
                   {stat.value}
                 </div>
-                <div className="text-white/90 text-sm sm:text-base font-medium">
+                <div className="text-white/95 text-sm sm:text-base font-medium">
                   {stat.label}
                 </div>
               </div>
             ))}
           </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* Values Section */}
-      <Section padding="lg" background="white">
-        <Container>
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="lg" background="gradient">
+          <Container>
           <div className="text-center mb-16">
             <Badge variant="secondary" size="lg" className="mb-4">What Drives Us</Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Our <span className="gradient-text-alt">Values</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+              Our <span className="gradient-text">Values</span>
             </h2>
-            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/95 max-w-3xl mx-auto font-light">
               The principles that guide everything we do and shape our company culture.
             </p>
           </div>
@@ -226,28 +240,30 @@ export default function AboutPage() {
               <Card key={index} className="text-center">
                 <CardContent className="p-8">
                   <div className="text-5xl mb-4">{value.icon}</div>
-                  <h3 className="text-xl font-bold text-neutral-900 mb-4">
+                  <h3 className="text-xl font-bold text-white mb-4">
                     {value.title}
                   </h3>
-                  <p className="text-neutral-600">
+                  <p className="text-white/80">
                     {value.description}
                   </p>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* Team Section */}
-      <Section padding="lg" background="gradient">
-        <Container>
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="lg" background="gradient">
+          <Container>
           <div className="text-center mb-16">
             <Badge variant="warning" size="lg" className="mb-4">The Dream Team</Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Meet Our <span className="text-accent-600">Team</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+              Meet Our <span className="gradient-text">Team</span>
             </h2>
-            <p className="text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/95 max-w-3xl mx-auto font-light">
               The talented individuals who make Praimcraft a success.
             </p>
           </div>
@@ -256,18 +272,18 @@ export default function AboutPage() {
             {teamMembers.map((member) => (
               <Card key={member.id} className="text-center hover:-translate-y-1 transform transition-all duration-300">
                 <CardContent className="p-8">
-                  <div className="relative w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center text-white font-bold text-2xl">
+                  <div className="relative w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-[#00E6FF]/30 to-[#A066FF]/30 flex items-center justify-center text-white font-bold text-2xl border-2 border-[#00E6FF]/30">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   
-                  <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                  <h3 className="text-xl font-bold text-white mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-primary-600 font-medium mb-4">
+                  <p className="text-[#00E6FF] font-medium mb-4">
                     {member.role}
                   </p>
                   
-                  <p className="text-neutral-600 mb-6 text-sm">
+                  <p className="text-white/80 mb-6 text-sm">
                     {member.bio}
                   </p>
                   
@@ -283,11 +299,11 @@ export default function AboutPage() {
                     {member.socialLinks.linkedin && (
                       <a
                         href={member.socialLinks.linkedin}
-                        className="text-primary-600 hover:text-primary-700"
+                        className="text-[#00E6FF] hover:text-[#00E6FF]/80"
                         aria-label="LinkedIn"
                       >
                         <span className="sr-only">LinkedIn</span>
-                        <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-[#00E6FF]/20 rounded-full flex items-center justify-center border border-[#00E6FF]/30">
                           <span className="text-sm font-bold">in</span>
                         </div>
                       </a>
@@ -295,11 +311,11 @@ export default function AboutPage() {
                     {member.socialLinks.twitter && (
                       <a
                         href={member.socialLinks.twitter}
-                        className="text-primary-600 hover:text-primary-700"
+                        className="text-[#00E6FF] hover:text-[#00E6FF]/80"
                         aria-label="Twitter"
                       >
                         <span className="sr-only">Twitter</span>
-                        <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-[#00E6FF]/20 rounded-full flex items-center justify-center border border-[#00E6FF]/30">
                           <span className="text-sm font-bold">𝕏</span>
                         </div>
                       </a>
@@ -307,11 +323,11 @@ export default function AboutPage() {
                     {member.socialLinks.github && (
                       <a
                         href={member.socialLinks.github}
-                        className="text-primary-600 hover:text-primary-700"
+                        className="text-[#00E6FF] hover:text-[#00E6FF]/80"
                         aria-label="GitHub"
                       >
                         <span className="sr-only">GitHub</span>
-                        <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-[#00E6FF]/20 rounded-full flex items-center justify-center border border-[#00E6FF]/30">
                           <span className="text-sm font-bold">GH</span>
                         </div>
                       </a>
@@ -321,17 +337,19 @@ export default function AboutPage() {
               </Card>
             ))}
           </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      </AbstractBackground>
 
       {/* CTA Section */}
-      <Section padding="lg" background="gradient">
-        <Container>
+      <AbstractBackground variant="section" intensity="medium">
+        <Section padding="lg" background="gradient">
+          <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-6">
-              Ready to Work With Us?
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Ready to Work <span className="gradient-text">With Us?</span>
             </h2>
-            <p className="text-xl text-neutral-600 mb-8">
+            <p className="text-xl text-white/95 mb-8 font-light">
               Let&apos;s discuss how our team can help your business achieve its digital goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -349,6 +367,7 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
+      </AbstractBackground>
     </div>
   )
 }

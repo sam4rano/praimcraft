@@ -17,15 +17,15 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white shadow-soft sticky top-0 z-50">
+    <header className="glass-nav sticky top-0 z-50">
       <Container>
         <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20 py-2">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-2.5 lg:space-x-3 touch-manipulation">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 bg-gradient-to-br from-[#00E6FF] to-[#A066FF] rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#00E6FF]/30">
               <span className="text-white font-bold text-lg sm:text-xl lg:text-2xl">P</span>
             </div>
-            <span className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900">Praimcraft</span>
+            <span className="text-lg sm:text-xl lg:text-2xl font-bold text-white">Praimcraft</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -34,7 +34,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-neutral-600 hover:text-primary-600 transition-colors duration-200 font-medium"
+                className="text-white/90 hover:text-[#00E6FF] transition-colors duration-200 font-medium"
                 aria-label={`Navigate to ${item.name}`}
               >
                 {item.name}
@@ -59,7 +59,7 @@ export function Header() {
               {/* Mobile menu button */}
               <button
                 type="button"
-                className="md:hidden p-2.5 rounded-lg text-neutral-600 hover:text-primary-600 hover:bg-neutral-100 focus-visible touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center"
+                className="md:hidden p-2.5 rounded-lg text-white hover:text-white hover:bg-white/20 focus-visible touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
@@ -84,19 +84,19 @@ export function Header() {
 
             {/* Mobile Navigation */}
             {mobileMenuOpen && (
-              <div id="mobile-menu" className="md:hidden border-t border-neutral-200 py-4 bg-white/95 backdrop-blur-sm" role="navigation" aria-label="Mobile navigation">
+              <div id="mobile-menu" className="md:hidden border-t border-white/20 py-4 bg-[#0A0F1F]/95" role="navigation" aria-label="Mobile navigation">
                 <div className="space-y-1 px-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-3.5 text-base font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 touch-manipulation min-h-[48px] flex items-center"
+                  className="px-4 py-3.5 text-base font-medium text-white/90 hover:text-white hover:bg-white/20 rounded-lg transition-colors duration-200 touch-manipulation min-h-[48px] flex items-center"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 space-y-3 border-t border-neutral-200 mt-4 px-2">
+              <div className="pt-4 space-y-3 border-t border-white/20 mt-4 px-2">
                 <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="block">
                   <Button variant="outline" size="md" className="w-full justify-center">
                     Get Started

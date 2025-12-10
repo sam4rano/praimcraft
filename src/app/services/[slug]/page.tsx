@@ -131,24 +131,24 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <div>
               {/* Breadcrumb */}
               <nav className="flex mb-6">
-                <ol className="flex items-center space-x-2 text-sm text-neutral-600">
+                <ol className="flex items-center space-x-2 text-sm text-white/70">
                   <li>
-                    <Link href="/services" className="hover:text-primary-600">
+                    <Link href="/services" className="hover:text-[#00E6FF]">
                       Services
                     </Link>
                   </li>
-                  <li className="text-neutral-400">/</li>
-                  <li className="text-neutral-900 font-medium">
+                  <li className="text-white/50">/</li>
+                  <li className="text-white font-medium">
                     {service.name}
                   </li>
                 </ol>
               </nav>
 
               <div className="text-6xl mb-6">{service.icon}</div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
-                {service.name}
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <span className="gradient-text">{service.name}</span>
               </h1>
-              <p className="text-xl text-neutral-600 mb-8">
+              <p className="text-xl text-white/95 mb-8 font-light">
                 {service.longDescription}
               </p>
               
@@ -168,7 +168,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
             <div className="relative">
               <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-strong">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00E6FF]/20 to-[#A066FF]/20 flex items-center justify-center">
                   <div className="text-white text-center">
                     <div className="text-8xl mb-4">{service.icon}</div>
                     <div className="text-xl font-semibold">Service Image</div>
@@ -182,13 +182,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </Section>
 
       {/* Features Section */}
-      <Section padding="lg" background="white">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               What's Included
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Comprehensive features and services to help you achieve your goals.
             </p>
           </div>
@@ -196,10 +196,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {service.features.map((feature, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-primary-600 rounded-full"></div>
+                <div className="w-6 h-6 bg-[#00E6FF]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#00E6FF]/30">
+                  <div className="w-2 h-2 bg-[#00E6FF] rounded-full"></div>
                 </div>
-                <p className="text-neutral-700">{feature}</p>
+                <p className="text-white/90">{feature}</p>
               </div>
             ))}
           </div>
@@ -207,13 +207,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </Section>
 
       {/* Process Section */}
-      <Section padding="lg" background="gray">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-              Our Process
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Our <span className="gradient-text">Process</span>
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white/95 max-w-3xl mx-auto font-light">
               A proven methodology that ensures successful project delivery.
             </p>
           </div>
@@ -222,17 +222,17 @@ export default async function ServicePage({ params }: ServicePageProps) {
             {service.process.map((step, index) => (
               <div key={index} className="text-center">
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#00E6FF] to-[#A066FF] text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto shadow-lg shadow-[#00E6FF]/30">
                     {step.step}
                   </div>
                   {index < service.process.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-primary-200 -translate-x-1/2"></div>
+                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-[#00E6FF]/30 -translate-x-1/2"></div>
                   )}
                 </div>
-                <h3 className="text-lg font-bold text-neutral-900 mb-3">
+                <h3 className="text-lg font-bold text-white mb-3">
                   {step.title}
                 </h3>
-                <p className="text-neutral-600 text-sm">
+                <p className="text-white/80 text-sm">
                   {step.description}
                 </p>
               </div>
@@ -243,13 +243,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       {/* Technologies Section */}
       {service.technologies && (
-        <Section padding="lg" background="white">
+        <Section padding="lg" background="gradient">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-4">
-                Technologies We Use
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Technologies We <span className="gradient-text">Use</span>
               </h2>
-              <p className="text-lg text-neutral-600">
+              <p className="text-lg text-white/95 font-light">
                 Modern tools and technologies to deliver the best results.
               </p>
             </div>
@@ -266,25 +266,25 @@ export default async function ServicePage({ params }: ServicePageProps) {
       )}
 
       {/* Pricing Section */}
-      <Section padding="lg" background="gray">
+      <Section padding="lg" background="gradient">
         <Container>
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">
-              Pricing
+            <h2 className="text-3xl font-bold text-white mb-4">
+              <span className="gradient-text">Pricing</span>
             </h2>
-            <p className="text-lg text-neutral-600 mb-8">
+            <p className="text-lg text-white/95 mb-8 font-light">
               Transparent pricing with no hidden fees.
             </p>
             
             <Card className="p-8">
               <CardContent>
-                <div className="text-4xl font-bold text-primary-600 mb-2">
+                <div className="text-4xl font-bold text-[#00E6FF] mb-2">
                   {service.pricing.startingFrom}
                 </div>
-                <p className="text-neutral-600 mb-6">
+                <p className="text-white/90 mb-6">
                   Starting price for basic projects
                 </p>
-                <p className="text-sm text-neutral-500 mb-6">
+                <p className="text-sm text-white/70 mb-6">
                   * Final pricing depends on project scope and requirements
                 </p>
                 <Link href="/contact">
@@ -302,10 +302,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <Section padding="lg" background="gradient">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-neutral-900 mb-6">
-              Ready to Get Started?
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Ready to Get <span className="gradient-text">Started?</span>
             </h2>
-            <p className="text-xl text-neutral-600 mb-8">
+            <p className="text-xl text-white/95 mb-8 font-light">
               Let's discuss your project and how we can help you achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

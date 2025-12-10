@@ -16,16 +16,16 @@ export function Section({
 }: SectionProps) {
   const paddingClasses = {
     none: '',
-    sm: 'py-8 sm:py-10 md:py-12',
-    md: 'py-10 sm:py-14 md:py-16 lg:py-20',
-    lg: 'py-12 sm:py-16 md:py-20 lg:py-28 xl:py-32',
-    xl: 'py-16 sm:py-24 md:py-32 lg:py-40 xl:py-48',
+    sm: 'py-6 sm:py-8 md:py-10',
+    md: 'py-8 sm:py-10 md:py-12 lg:py-16',
+    lg: 'py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24',
+    xl: 'py-12 sm:py-16 md:py-20 lg:py-28 xl:py-32',
   }
 
   const backgroundClasses = {
-    white: 'bg-white',
-    gray: 'bg-neutral-50',
-    gradient: 'gradient-bg',
+    white: 'relative bg-transparent',
+    gray: 'relative bg-transparent',
+    gradient: 'relative bg-transparent',
   }
 
   return (

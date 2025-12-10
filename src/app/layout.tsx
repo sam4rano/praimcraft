@@ -82,14 +82,16 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <div className="relative z-10">
+          <Header />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
