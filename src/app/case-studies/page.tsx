@@ -198,6 +198,122 @@ const caseStudies = [
     services: ['Mobile App Development', 'UI/UX Design', 'Backend Development'],
     duration: '6 months',
     featured: false
+  },
+  {
+    id: 'edurepoai-university-platform',
+    title: 'EduRepoAI - Find Your Perfect University Program',
+    client: 'EduRepoAI',
+    industry: 'Education Technology',
+    challenge: 'Students needed a comprehensive platform to find university programs, calculate admission chances, and get AI-powered recommendations.',
+    solution: 'Built a full-featured platform with AI recommendations, admission calculator, and comprehensive database of 10,428+ programs across 941+ institutions.',
+    results: [
+      { label: 'Programs Available', value: '10,428+' },
+      { label: 'Institutions', value: '941+' },
+      { label: 'User Engagement', value: 'High' },
+      { label: 'AI Recommendations', value: 'Personalized' }
+    ],
+    testimonial: {
+      quote: 'EduRepoAI has revolutionized how students find their perfect university program. The AI recommendations are incredibly accurate.',
+      author: 'EduRepoAI Team',
+      role: 'Education Platform'
+    },
+    featuredImage: {
+      _id: 'cs7',
+      alt: 'EduRepoAI platform',
+      asset: { _ref: 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-800x600-jpg', _type: 'reference' }
+    },
+    gallery: [],
+    services: ['Software Development', 'AI Integration', 'UI/UX Design'],
+    duration: '4 months',
+    featured: true,
+    website: 'https://edurepoai.xyz'
+  },
+  {
+    id: 'egba-scholarship-management',
+    title: 'EGBA Student Scholarship Management System',
+    client: 'EGBA Scholarship Foundation',
+    industry: 'Education',
+    challenge: 'Needed a comprehensive system to manage student scholarships, applications, and award distribution efficiently.',
+    solution: 'Developed a complete scholarship management platform with application tracking, student database, and automated award processing.',
+    results: [
+      { label: 'Applications Processed', value: 'Streamlined' },
+      { label: 'Processing Time', value: '70% reduction' },
+      { label: 'System Efficiency', value: 'Significantly improved' },
+      { label: 'Student Satisfaction', value: 'High' }
+    ],
+    testimonial: {
+      quote: 'The scholarship management system has made our operations so much more efficient. Highly recommended!',
+      author: 'EGBA Foundation',
+      role: 'Scholarship Management'
+    },
+    featuredImage: {
+      _id: 'cs8',
+      alt: 'EGBA scholarship system',
+      asset: { _ref: 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-800x600-jpg', _type: 'reference' }
+    },
+    gallery: [],
+    services: ['Software Development', 'Database Management', 'Workflow Automation'],
+    duration: '3 months',
+    featured: true,
+    website: 'https://www.agleventisegbaschl.org'
+  },
+  {
+    id: 'aajlag-multipurpose-platform',
+    title: 'AAJ Concept - Multipurpose Business Platform',
+    client: 'Adore Arcade Judicature Lag (AAJ Concept)',
+    industry: 'Financial Services',
+    challenge: 'A diverse company needed a comprehensive platform to showcase multiple business sectors including financial services, estate management, construction, and international trade.',
+    solution: 'Built a dynamic multipurpose platform showcasing all business divisions with integrated solutions for financial services, estate management, construction, and international trade.',
+    results: [
+      { label: 'Business Sectors', value: '4+ divisions' },
+      { label: 'Platform Reach', value: 'Nigeria-wide' },
+      { label: 'Client Engagement', value: 'Increased' },
+      { label: 'Business Growth', value: 'Accelerated' }
+    ],
+    testimonial: {
+      quote: 'AAJ Concept platform has helped us showcase our diverse business solutions effectively. Great work!',
+      author: 'AAJ Concept',
+      role: 'Multipurpose Business'
+    },
+    featuredImage: {
+      _id: 'cs9',
+      alt: 'AAJ Concept platform',
+      asset: { _ref: 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-800x600-jpg', _type: 'reference' }
+    },
+    gallery: [],
+    services: ['Software Development', 'Web Design', 'Business Solutions'],
+    duration: '5 months',
+    featured: true,
+    website: 'https://aajlag.com'
+  },
+  {
+    id: 'olimfarms-food-processing',
+    title: 'Olim Farms - Food Processing & Training Platform',
+    client: 'Olim Farms',
+    industry: 'Agriculture & Food Processing',
+    challenge: 'Needed a platform to showcase food processing capabilities and provide training resources for sustainable agriculture and food production.',
+    solution: 'Developed a comprehensive platform featuring food processing services, training programs, and resources for empowering the future of food production.',
+    results: [
+      { label: 'Training Programs', value: 'Comprehensive' },
+      { label: 'Food Processing', value: 'Advanced' },
+      { label: 'Sustainable Agriculture', value: 'Promoted' },
+      { label: 'Platform Engagement', value: 'High' }
+    ],
+    testimonial: {
+      quote: 'Olim Farms platform has been instrumental in sharing our expertise in food processing and sustainable agriculture.',
+      author: 'Olim Farms',
+      role: 'Food Processing & Training'
+    },
+    featuredImage: {
+      _id: 'cs10',
+      alt: 'Olim Farms platform',
+      asset: { _ref: 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-800x600-jpg', _type: 'reference' }
+    },
+    gallery: [],
+    services: ['Web Development', 'Content Management', 'Training Platform'],
+    duration: '4 months',
+    featured: true,
+    website: 'https://olimfarms.com'
   }
 ]
 
@@ -294,7 +410,19 @@ export default function CaseStudiesPage() {
                       ))}
                     </div>
                     
-                    <div className="pt-4">
+                    <div className="pt-4 space-y-2">
+                      {study.website && (
+                        <a
+                          href={study.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block"
+                        >
+                          <Button variant="outline" size="sm" className="w-full">
+                            Visit Website →
+                          </Button>
+                        </a>
+                      )}
                       <Link href={`/case-studies/${study.id}`}>
                         <Button size="sm" className="w-full">
                           View Full Case Study →
@@ -363,11 +491,25 @@ export default function CaseStudiesPage() {
                           {study.results[0]?.label}
                         </div>
                       </div>
-                      <Link href={`/case-studies/${study.id}`}>
-                        <Button variant="outline" size="sm">
-                          View Details →
-                        </Button>
-                      </Link>
+                      <div className="flex flex-col gap-2">
+                        {study.website && (
+                          <a
+                            href={study.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block"
+                          >
+                            <Button variant="outline" size="sm" className="w-full">
+                              Visit Site
+                            </Button>
+                          </a>
+                        )}
+                        <Link href={`/case-studies/${study.id}`}>
+                          <Button variant="outline" size="sm" className="w-full">
+                            View Details →
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </CardContent>

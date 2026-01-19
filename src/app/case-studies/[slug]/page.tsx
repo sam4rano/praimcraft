@@ -56,6 +56,142 @@ const caseStudies = [
     team: ['Project Manager', 'UI/UX Designer', 'Frontend Developer', 'Backend Developer', 'QA Engineer'],
     technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'Redis'],
     featured: true
+  },
+  {
+    id: 'edurepoai-university-platform',
+    title: 'EduRepoAI - Find Your Perfect University Program',
+    client: 'EduRepoAI',
+    industry: 'Education Technology',
+    challenge: 'Students needed a comprehensive platform to find university programs, calculate admission chances, and get AI-powered recommendations. The platform needed to handle 10,428+ programs across 941+ institutions with accurate matching algorithms.',
+    solution: 'Built a full-featured platform with AI recommendations engine, admission calculator, and comprehensive database. Implemented advanced search and filtering, personalized program matching, and real-time admission probability calculations.',
+    results: [
+      { label: 'Programs Available', value: '10,428+', description: 'Across all institutions' },
+      { label: 'Institutions', value: '941+', description: 'Universities and colleges' },
+      { label: 'User Engagement', value: 'High', description: 'Active user base' },
+      { label: 'AI Recommendations', value: 'Personalized', description: 'Accurate matching' },
+      { label: 'Admission Calculator', value: 'Real-time', description: 'Instant results' },
+      { label: 'Platform Performance', value: 'Optimized', description: 'Fast load times' }
+    ],
+    testimonial: {
+      quote: 'EduRepoAI has revolutionized how students find their perfect university program. The AI recommendations are incredibly accurate and the admission calculator helps students make informed decisions.',
+      author: 'EduRepoAI Team',
+      role: 'Education Platform',
+      company: 'EduRepoAI'
+    },
+    featuredImage: {
+      _id: 'cs7',
+      alt: 'EduRepoAI platform',
+      asset: { _ref: 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-1200x800-jpg', _type: 'reference' }
+    },
+    gallery: [],
+    services: ['Software Development', 'AI Integration', 'UI/UX Design', 'Database Management'],
+    duration: '4 months',
+    team: ['Full-Stack Developer', 'AI Engineer', 'UI/UX Designer', 'Data Analyst'],
+    technologies: ['React', 'Node.js', 'Python', 'Machine Learning', 'PostgreSQL', 'AWS'],
+    featured: true,
+    website: 'https://edurepoai.xyz'
+  },
+  {
+    id: 'egba-scholarship-management',
+    title: 'EGBA Student Scholarship Management System',
+    client: 'EGBA Scholarship Foundation',
+    industry: 'Education',
+    challenge: 'The foundation needed a comprehensive system to manage student scholarships, applications, and award distribution efficiently. Manual processes were time-consuming and error-prone.',
+    solution: 'Developed a complete scholarship management platform with application tracking, student database, automated award processing, and reporting system. Implemented secure document management and communication tools.',
+    results: [
+      { label: 'Applications Processed', value: 'Streamlined', description: 'Automated workflow' },
+      { label: 'Processing Time', value: '70% reduction', description: 'From weeks to days' },
+      { label: 'System Efficiency', value: 'Significantly improved', description: 'Error-free processing' },
+      { label: 'Student Satisfaction', value: 'High', description: 'Easy application process' },
+      { label: 'Data Accuracy', value: '99%+', description: 'Automated validation' },
+      { label: 'Reporting', value: 'Real-time', description: 'Instant insights' }
+    ],
+    testimonial: {
+      quote: 'The scholarship management system has made our operations so much more efficient. We can now process applications faster and serve more students. Highly recommended!',
+      author: 'EGBA Foundation',
+      role: 'Scholarship Management',
+      company: 'EGBA Scholarship Foundation'
+    },
+    featuredImage: {
+      _id: 'cs8',
+      alt: 'EGBA scholarship system',
+      asset: { _ref: 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-1200x800-jpg', _type: 'reference' }
+    },
+    gallery: [],
+    services: ['Software Development', 'Database Management', 'Workflow Automation', 'System Integration'],
+    duration: '3 months',
+    team: ['Full-Stack Developer', 'Database Administrator', 'UI/UX Designer'],
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Express', 'AWS'],
+    featured: true,
+    website: 'https://www.agleventisegbaschl.org'
+  },
+  {
+    id: 'aajlag-multipurpose-platform',
+    title: 'AAJ Concept - Multipurpose Business Platform',
+    client: 'Adore Arcade Judicature Lag (AAJ Concept)',
+    industry: 'Financial Services',
+    challenge: 'A diverse company needed a comprehensive platform to showcase multiple business sectors including financial services, estate management, construction, and international trade. The platform needed to represent all divisions cohesively.',
+    solution: 'Built a dynamic multipurpose platform showcasing all business divisions with integrated solutions. Created separate sections for each business sector while maintaining brand consistency. Implemented contact forms and service inquiry systems.',
+    results: [
+      { label: 'Business Sectors', value: '4+ divisions', description: 'All represented' },
+      { label: 'Platform Reach', value: 'Nigeria-wide', description: 'National presence' },
+      { label: 'Client Engagement', value: 'Increased', description: 'More inquiries' },
+      { label: 'Business Growth', value: 'Accelerated', description: 'Expanded reach' },
+      { label: 'Brand Visibility', value: 'Enhanced', description: 'Professional presence' },
+      { label: 'Lead Generation', value: 'Improved', description: 'More conversions' }
+    ],
+    testimonial: {
+      quote: 'AAJ Concept platform has helped us showcase our diverse business solutions effectively. The platform represents all our divisions professionally and has increased our client engagement significantly. Great work!',
+      author: 'AAJ Concept',
+      role: 'Multipurpose Business',
+      company: 'AAJ Concept'
+    },
+    featuredImage: {
+      _id: 'cs9',
+      alt: 'AAJ Concept platform',
+      asset: { _ref: 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-1200x800-jpg', _type: 'reference' }
+    },
+    gallery: [],
+    services: ['Software Development', 'Web Design', 'Business Solutions', 'Brand Development'],
+    duration: '5 months',
+    team: ['Full-Stack Developer', 'UI/UX Designer', 'Content Strategist'],
+    technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'AWS'],
+    featured: true,
+    website: 'https://aajlag.com'
+  },
+  {
+    id: 'olimfarms-food-processing',
+    title: 'Olim Farms - Food Processing & Training Platform',
+    client: 'Olim Farms',
+    industry: 'Agriculture & Food Processing',
+    challenge: 'Needed a platform to showcase food processing capabilities and provide training resources for sustainable agriculture and food production. The platform should serve both as a business showcase and educational resource.',
+    solution: 'Developed a comprehensive platform featuring food processing services, training programs, and resources. Created interactive sections for courses, recipes, and sustainable agriculture practices. Implemented booking system for training sessions.',
+    results: [
+      { label: 'Training Programs', value: 'Comprehensive', description: 'Multiple courses' },
+      { label: 'Food Processing', value: 'Advanced', description: 'Modern techniques' },
+      { label: 'Sustainable Agriculture', value: 'Promoted', description: 'Best practices' },
+      { label: 'Platform Engagement', value: 'High', description: 'Active users' },
+      { label: 'Course Enrollment', value: 'Increased', description: 'More students' },
+      { label: 'Business Growth', value: 'Expanded', description: 'Wider reach' }
+    ],
+    testimonial: {
+      quote: 'Olim Farms platform has been instrumental in sharing our expertise in food processing and sustainable agriculture. The platform has helped us reach more people and grow our training programs significantly.',
+      author: 'Olim Farms',
+      role: 'Food Processing & Training',
+      company: 'Olim Farms'
+    },
+    featuredImage: {
+      _id: 'cs10',
+      alt: 'Olim Farms platform',
+      asset: { _ref: 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-1200x800-jpg', _type: 'reference' }
+    },
+    gallery: [],
+    services: ['Web Development', 'Content Management', 'Training Platform', 'E-Learning'],
+    duration: '4 months',
+    team: ['Full-Stack Developer', 'UI/UX Designer', 'Content Creator'],
+    technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'AWS'],
+    featured: true,
+    website: 'https://olimfarms.com'
   }
 ]
 
@@ -110,13 +246,28 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 </p>
               </div>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {study.services.map((service, index) => (
                   <Badge key={index} variant="secondary" size="sm">
                     {service}
                   </Badge>
                 ))}
               </div>
+              
+              {study.website && (
+                <div className="mt-4">
+                  <a
+                    href={study.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block"
+                  >
+                    <Button size="lg" className="w-full sm:w-auto">
+                      Visit Live Website →
+                    </Button>
+                  </a>
+                </div>
+              )}
             </div>
 
             <div className="relative">
